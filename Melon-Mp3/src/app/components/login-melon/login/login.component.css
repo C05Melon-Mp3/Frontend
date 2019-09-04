@@ -1,0 +1,12 @@
+.loginForm {
+    margin-left: 30%;
+    width: 400px;
+    padding: 80px;
+    padding-top: 60px;
+    background: rgba(252, 250, 250, 0.911);
+    border-radius: 10px;
+}
+
+.loginForm mat-form-field {
+    width: 100%;
+}

@@ -1,0 +1,211 @@
+.logo {
+    margin: 10px;
+    float: left;
+    color: #d882b7ee;
+    text-decoration: none;
+}
+
+.dropdown {
+    margin: 0;
+    float: left;
+    background: hsl(0, 0%, 100%);
+    border-radius: 60%;
+}
+
+.dropdown-menu {
+    background: #ffffff;
+}
+
+.navbar-nav {
+    background: #d882b7ee;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+.navbar-inverse {
+    background: #d882b7ee;
+    border: none;
+    color: white;
+    border-radius: 0;
+}
+
+a {
+    color: #ffffff;
+}
+
+.dropdown-toggle {
+    margin: 0;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    background-image: url('../assets/images/README.png');
+    background-size: 100%;
+    border: none;
+    border-radius: 60%;
+}
+
+.img {
+    margin: 0;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.search {
+    color: #d882b7ee;
+    border: 1px solid #d882b7ee;
+    font-style: italic;
+}
+
+.footer-area {
+    position: relative;
+    z-index: 1;
+}
+
+.single-footer-widget {
+    position: relative;
+    z-index: 1;
+}
+
+.single-footer-widget .widget-title {
+    color: #232323;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.single-footer-widget p {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.single-footer-widget .footer-social-info a {
+    display: inline-block;
+    color: #ffffff;
+    margin-right: 5px;
+    background-color: #f55656;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.single-footer-widget .footer-social-info a.facebook {
+    background-color: #4c60ac;
+}
+
+.single-footer-widget .footer-social-info a.twitter {
+    background-color: #00bae3;
+}
+
+.single-footer-widget .footer-social-info a.pinterest {
+    background-color: #d91a18;
+}
+
+.single-footer-widget .footer-social-info a.instagram {
+    background-color: #0085d7;
+}
+
+.single-footer-widget .footer-social-info a.youtube {
+    background-color: #e20000;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-footer-widget .footer-social-info a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+}
+
+.single-footer-widget .catagories-nav {
+    position: relative;
+    z-index: 1;
+}
+
+.single-footer-widget .catagories-nav li a {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 500;
+}
+
+.single-footer-widget .catagories-nav li a:focus,
+.single-footer-widget .catagories-nav li a:hover {
+    color: #f55656;
+}
+
+.single-footer-widget .catagories-nav li:last-child a {
+    margin-bottom: 0;
+}
+
+.single-footer-widget .single-latest-episodes {
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.single-footer-widget .single-latest-episodes:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.single-footer-widget .single-latest-episodes .episodes-date {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #a6a6a6;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.single-footer-widget .single-latest-episodes .episodes-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #232323;
+    display: block;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-footer-widget .single-latest-episodes .episodes-title {
+        font-size: 14px;
+    }
+}
+
+.single-footer-widget .single-latest-episodes .episodes-title:focus,
+.single-footer-widget .single-latest-episodes .episodes-title:hover {
+    color: #f55656;
+}
+
+.copywrite-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.copywrite-content p {
+    font-size: 14px;
+    color: #a6a6a6;
+    margin-bottom: 0;
+}
+
+.copywrite-content p a {
+    color: #a6a6a6;
+}
+
+.copywrite-content p a:focus,
+.copywrite-content p a:hover {
+    color: #f55656;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}

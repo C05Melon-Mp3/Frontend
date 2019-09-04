@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="playlist">
+        <h3>Playlist {{ playlist.name_playlist}}</h3>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a [routerLink]="['/melon.mp3.vn/playlist',playlist.id,'edit-playlist']">Edit playlist {{ playlist.name_playlist }}</a></li>
+                <li><a [routerLink]="['/melon.mp3.vn/song']">Add songs to the list</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="top" *ngFor="let song of list_song">
+        <img src="{{ song.avatar_song }}" alt="{{ song.name_song }}" width="80%" height="200px">
+        <a [routerLink]="['/melon.mp3.vn/playlist', playlist.id, playlist.name_playlist]">
+            <h4>{{ song.name_song }}</h4>
+            <p>{{ song.name_artist }}</p>
+        </a>
+    </div>
+    <div class="top-add">
+        <a class="a-add" [routerLink]="['/melon.mp3.vn/song']">+</a>
+    </div>
+</div>
+<router-outlet></router-outlet>

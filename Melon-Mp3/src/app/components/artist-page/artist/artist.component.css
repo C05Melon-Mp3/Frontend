@@ -1,0 +1,70 @@
+.content {
+    margin: 0;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.btn-artists {
+    float: right;
+    color: #ffffff;
+    background: #d882b7ee;
+    border: none;
+}
+
+.artists {
+    margin: 0;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.top {
+    margin: 1%;
+    float: left;
+    width: 15%;
+    height: auto;
+    background: #e6e6e6ee;
+}
+
+.top img {
+    margin: 5% 21%;
+    width: 60%;
+    height: 100px;
+    border-radius: 60%;
+}
+
+h3 {
+    margin: 0;
+    float: left;
+    color: #d882b7ee;
+    padding: 10px;
+}
+
+h6 {
+    color: #d882b7ee;
+    text-align: center;
+}
+
+.top-add {
+    margin: 1%;
+    float: left;
+    width: 15%;
+    height: 200px;
+    background: #e6e6e6ee;
+}
+
+.a-add {
+    margin: 29%;
+    font-size: 120px;
+    color: #d882b7ee;
+    text-decoration: none;
+}
+
+.btn-comment {
+    margin: 10px 33%;
+    font-size: 12px;
+    padding: 5px;
+    background: #d882b7ee;
+    border: 1px solid #ffffff;
+}

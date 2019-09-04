@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Add Song</h3>
+    </div>
+    <div class="panel-body">
+        <form action="" method="POST" role="form">
+            <div class="form-group">
+                <label for="name">Song Title:</label>
+                <input type="text" class="form-control" [(ngModel)]="song.name_song" name="name_song">
+            </div>
+            <div class="form-group">
+                <label for="artist">Artist:</label>
+                <input type="text" class="form-control" [(ngModel)]="song.name_artist" name="name_artist">
+            </div>
+            <div class="form-group">
+                <label for="desc">Description:</label>
+                <input type="text" class="form-control" [(ngModel)]="song.description" name="desc">
+            </div>
+            <div class="form-group">
+                <label for="label">Label:</label>
+                <input type="text" class="form-control" [(ngModel)]="song.label" name="label">
+            </div>
+            <div class="form-group">
+                <label for="filemp3">File MP3:</label>
+                <input type="text" class="form-control" [(ngModel)]="song.fileMp3" name="filemp3">
+            </div>
+            <div class="form-group">
+                <label for="avatar_song">Avatar:</label>
+                <input type="text" class="form-control" [(ngModel)]="song.avatar_song" name="avatar">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="onEditSong()">Save</button>
+        </form>
+    </div>
+</div>

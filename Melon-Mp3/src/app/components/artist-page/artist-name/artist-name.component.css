@@ -1,0 +1,47 @@
+.content {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.top {
+    margin: 0;
+    float: left;
+    width: 25%;
+    height: auto;
+}
+
+h3 {
+    margin: 0;
+    float: left;
+    color: #5b97dbee;
+    padding: 10px;
+}
+
+h4 {
+    color: #d882b7ee;
+}
+
+.artists {
+    margin: 0;
+    float: left;
+    width: 100%;
+}
+
+.btn-artist {
+    float: right;
+}
+
+.top-add {
+    margin: 0;
+    float: left;
+    width: 20%;
+    height: 200px;
+    background: #d9dfe6ee;
+}
+
+.a-add {
+    margin: 35%;
+    font-size: 120px;
+    text-decoration: none;
+}

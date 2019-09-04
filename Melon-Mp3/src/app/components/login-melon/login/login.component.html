@@ -1,0 +1,19 @@
+<div class="container text-center">
+    <form class="loginForm">
+        <h3>Sign In</h3>
+        <mat-form-field>
+            <input matInput placeholder="Username">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password">
+        </mat-form-field>
+        <br>
+        <button class="mt-4" mat-raised-button color="primary" type="submit">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+        <button class="mt-4" mat-raised-button color="primary" type="submit" [routerLink]="['/melon.mp3.vn/register']">
+                    <i class="fas fa-sign-in-alt"></i>Register
+                </button>
+    </form>
+</div>
