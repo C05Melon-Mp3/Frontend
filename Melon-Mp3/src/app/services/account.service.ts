@@ -21,7 +21,7 @@ export class AccountService {
   registerUser(userInfo: Account): Observable<any> {
     return this.http.post<any>(this.registerUrl, userInfo, httpOptions);
   }
- 
+
   updatePassword(id: number, newPassword: String, currentPassword: String): Observable<any> {
     return this.http.put(`${this.baseUrl}/update-password/${id}`, { newPassword: newPassword, currentPassword: currentPassword });
   }

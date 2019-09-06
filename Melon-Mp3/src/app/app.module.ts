@@ -53,6 +53,7 @@ import { PlaylistAddComponent } from './components/playlist-page/playlist-add/pl
 import { PlaylistEditComponent } from './components/playlist-page/playlist-edit/playlist-edit.component';
 import { PlaylistNameComponent } from './components/playlist-page/playlist-name/playlist-name.component';
 import { PlaylistAddSongComponent } from './components/playlist-page/playlist-add-song/playlist-add-song.component';
+import { UpdatePasswordComponent } from './components/login-melon/update-password/update-password.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { PlaylistAddSongComponent } from './components/playlist-page/playlist-ad
     PlaylistEditComponent,
     PlaylistNameComponent,
     PlaylistAddSongComponent,
+    UpdatePasswordComponent,
     
   ],
   imports: [

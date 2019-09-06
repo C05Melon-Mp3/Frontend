@@ -18,6 +18,7 @@ import { ArtistNameComponent } from './components/artist-page/artist-name/artist
 import { ArtistCommentComponent } from './components/artist-page/artist-comment/artist-comment.component';
 import { LoginComponent } from './components/login-melon/login/login.component';
 import { RegisterComponent } from './components/login-melon/register/register.component';
+import { UpdatePasswordComponent } from './components/login-melon/update-password/update-password.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,10 @@ const routes: Routes = [
     path: 'melon.mp3.vn/register',
     component: RegisterComponent,
   },
+  {
+  path: 'melon.mp3.vn/accounts/update-password/:id',
+  component: UpdatePasswordComponent,
+},
   //Playlist-page
   {
     path: 'melon.mp3.vn/playlist',
