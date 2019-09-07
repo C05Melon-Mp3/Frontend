@@ -7,13 +7,14 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   // ,'Access-Control-Allow-Origin': 'http://localhost:4200'
 };
+
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
   constructor(private http: HttpClient) { }
-  
+
   registerUrl = "http://localhost:8080/register";
   private baseUrl = 'http://localhost:8080/accounts';
 
@@ -21,20 +22,27 @@ export class AccountService {
   registerUser(userInfo: Account): Observable<any> {
     return this.http.post<any>(this.registerUrl, userInfo, httpOptions);
   }
+  // addSong(song:Song): Observable<Song>{
+  //   return this.http.post<Song>(`${this.API}`,song);
+  // }
 
   updatePassword(id: number, newPassword: String, currentPassword: String): Observable<any> {
     return this.http.put(`${this.baseUrl}/update-password/${id}`, { newPassword: newPassword, currentPassword: currentPassword });
   }
 
-    getAccountById(id :number){
+  // updatePassword(id: number, newPassword: String, currentPassword: String): Observable<any> {
+  //   return this.http.put(`${this.baseUrl}/update-password/${id}`, { newPassword: newPassword, currentPassword: currentPassword });
+  // }
+
+  getAccountById(id: number) {
     return this.http.get<Account>(this.baseUrl + '/show/' + id);
   }
 
-  getAllAccounts():Observable<any>{
+  getAllAccounts(): Observable<any> {
     return this.http.get(this.baseUrl);
   }
 
-  updateUserInformation(account:Account){
-    return this.http.put(this.baseUrl+'/update-user/'+account.id,account);
+  updateUserInformation(account: Account) {
+    return this.http.put(this.baseUrl + '/update-user/' + account.id, account);
   }
 }

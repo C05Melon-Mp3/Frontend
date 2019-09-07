@@ -1,4 +1,3 @@
-
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
 import { AccountService } from 'src/app/services/account.service';
@@ -17,7 +16,7 @@ export class UpdatePasswordComponent implements OnInit {
   newPassword: String;
   currentPassword: String;
   message: String;
-  id: number = 7;
+  id: number = 10;
   loginStatus: Boolean = false;
   constructor(private formBuilder: FormBuilder, private accountService: AccountService, 
     private loginStatusService: LoginStatusService, private token: TokenStorageService) { }
@@ -58,8 +57,10 @@ export class UpdatePasswordComponent implements OnInit {
   
     onSubmit() {
       if (confirm("Bạn có muốn cập nhật password này hay không?")) {
-        console.log(this.childMessage +"abc");
+        console.log(this.childMessage +"abcdef");
+        console.log("--------------1--------------");
         console.log(this.registerForm.get("currentPassword").value);
+        console.log("--------------2--------------");
         console.log(this.registerForm.get("password").get("newPassword").value);
         if (this.registerForm.valid) {
           this.currentPassword = this.registerForm.get("currentPassword").value;

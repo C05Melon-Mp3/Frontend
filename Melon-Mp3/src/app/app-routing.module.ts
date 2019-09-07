@@ -42,9 +42,9 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-  path: 'melon.mp3.vn/accounts/update-password/:id',
-  component: UpdatePasswordComponent,
-},
+    path: 'melon.mp3.vn/accounts/update-password/:id',
+    component: UpdatePasswordComponent,
+  },
   //Playlist-page
   {
     path: 'melon.mp3.vn/playlist',

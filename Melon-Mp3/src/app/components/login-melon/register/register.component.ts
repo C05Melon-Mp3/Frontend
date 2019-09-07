@@ -139,7 +139,7 @@ export class RegisterComponent implements OnInit {
           horizontalPosition: 'center',
         });
         snackbarRef.onAction().subscribe(() => {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/melon.mp3.vn/login']);
         })
         console.log(data);
       },

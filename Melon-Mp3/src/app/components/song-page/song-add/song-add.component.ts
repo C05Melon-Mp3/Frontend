@@ -3,6 +3,8 @@ import { Song } from 'src/app/models/song.class';
 import { Subscription } from 'rxjs';
 import { SongService } from 'src/app/services/song.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-song-add',
@@ -11,31 +13,62 @@ import { Router } from '@angular/router';
 })
 export class SongAddComponent implements OnInit {
 
-  public song : Song;
-  public subscription : Subscription;
+  hide = true;
 
-  constructor(
-    public songService : SongService,
-    public routerService : Router
-    ) { }
+
+  form: any = {};
+  song: Song;
+  isAdd = false;
+
+  constructor(private songService: SongService, private fb: FormBuilder, private router: Router, public snackbar: MatSnackBar) { }
 
   ngOnInit() {
-    this.song = new Song();
+    this.createFormAdd();
   }
-  ngOnDestroy(){
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
-  }
-  onAddSong(){
 
-    this.subscription = this.songService.addSong(this.song).subscribe(data => {
-      if (data.id && data) {
-        this.routerService.navigate(['/melon.mp3.vn/song']);
+  addForm: FormGroup
+
+  createFormAdd() {
+    this.addForm = this.fb.group({
+      nameSong: new FormControl('',),
+      descriptionSong: new FormControl('',),
+      fileMp3: new FormControl('',),
+      avatarSong: new FormControl('',),
+      comment: new FormControl('',)
+
+    })
+  };
+
+  onSubmitAddSong() {
+    console.log(this.addForm);
+
+    this.song = new Song(
+      this.form.nameSong,
+      this.form.descriptionSong,
+      this.form.fileMp3,
+      this.form.avatarSong,
+      this.form.comment
+    );
+
+    this.songService.addSong(this.song)
+      .subscribe(data => {
+        if (this.song == null) {
+          this.isAdd = false;
+        }
+        this.isAdd = true;
+        const songList = "Back to Song List";
+        const snackbarRef = this.snackbar.open('Add New Song Successfully!', songList, {
+          horizontalPosition: 'center',
+        });
+        snackbarRef.onAction().subscribe(() => {
+          this.router.navigate(['/melon.mp3.vn/song']);
+        })
+        console.log(data);
+        
       }
-    });
-
+     
+      )
+    
   }
-
 
 }
