@@ -29,7 +29,7 @@ export class PlaylistNameComponent implements OnInit, OnDestroy {
       this.subscription = this.playlistService.getPlaylist(id).subscribe((data : Playlist) =>{
          this.playlist = data;
         // this.list_song = data.list_song;
-        console.log(this.list_song);
+        // console.log(this.list_song);
       });
     });
   }

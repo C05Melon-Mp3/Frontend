@@ -27,8 +27,8 @@ export class ArtistNameComponent implements OnInit ,OnDestroy{
       let id = data.id;
       this.subscription = this.artistService.getArtist(id).subscribe((data : Artist) =>{
         this.artist = data;
-        this.list_song = data.list_song;
-        console.log(this.list_song);
+        // this.list_song = data.list_song;
+        // console.log(this.list_song);
       });
     });
   }
