@@ -5,7 +5,8 @@
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a [routerLink]="['/melon.mp3.vn/artist',artist.id,'edit']">Edit artist {{ artist.name }}</a></li>
+                <li><a [routerLink]="['/melon.mp3.vn/artist', artist.id,'edit']">Edit artist</a></li>
+                <!-- <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Edit</a></li> -->
                 <li><a [routerLink]="['/melon.mp3.vn/song']">Add songs to the artist {{ artist.name }}</a></li>
             </ul>
         </div>

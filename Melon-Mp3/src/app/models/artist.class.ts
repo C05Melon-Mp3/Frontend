@@ -1,7 +1,7 @@
 
 export class Artist{
-    id?:number;
-    name?: string;
-    avatar?:string;
-    country?:string;
+    id?:Number;
+    name?: String;
+    avatar?:String;
+    country?:String;
 }
