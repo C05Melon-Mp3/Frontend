@@ -4,9 +4,9 @@
         <button type="button" class="btn btn-primary btn-playlist" [routerLink]="['/melon.mp3.vn/playlist/add-playlist']">Create new playlist</button>
     </div>
     <div class="top" *ngFor="let item of playlist">
-        <img src="{{ item.avatar }}" alt="{{ item.name_playlist }}" width="80%" height="200px">
+        <img src="{{ item.avatar }}" alt="{{ item.name}}" width="80%" height="200px">
         <a [routerLink]="['/melon.mp3.vn/playlist',item.id, item.name_playlist]">
-            <h4>{{ item.name_playlist }}</h4>
+            <h4>{{ item.name }}</h4>
         </a>
     </div>
     <div class="top-add">

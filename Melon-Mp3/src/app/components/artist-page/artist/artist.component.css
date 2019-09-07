@@ -5,6 +5,11 @@
     height: auto;
 }
 
+.country {
+    width: 100%;
+    height: auto;
+}
+
 .btn-artists {
     float: right;
     color: #ffffff;

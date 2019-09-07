@@ -3,13 +3,13 @@
         <h3> List Artists </h3>
         <button type="button" class="btn btn-primary btn-artists" [routerLink]="['/melon.mp3.vn/artist/add-artist']">Create new Artist</button>
     </div>
-    <div class="top" *ngFor="let item of artists">
+    <div class="top" *ngFor="let artist of artists">
 
-        <img src="{{ item.avatar_artist }}" alt="{{ item.name_artist }}">
-        <a [routerLink]="['/melon.mp3.vn/artist',item.id, item.name_artist]">
-            <h6>{{ item.name_artist }}</h6>
+        <img src="{{ artist.avatar }}" alt="{{ artist.name }}">
+        <a [routerLink]="['/melon.mp3.vn/artist',artist.id, artist.name]">
+            <h6>{{ artist.name }}</h6>
         </a>
-        <button type="button" class="btn btn-primary btn-comment" [routerLink]="['/melon.mp3.vn/artist', item.id, item.name_artist, 'comment']">Comment</button>
+        <button type="button" class="btn btn-primary btn-comment" [routerLink]="['/melon.mp3.vn/artist', artist.id, artist.name, 'comment']">Comment</button>
     </div>
     <div class="top-add">
         <a class="a-add" [routerLink]="['/melon.mp3.vn/artist/add-artist']">+</a>
