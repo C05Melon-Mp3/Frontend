@@ -27,8 +27,8 @@ export class PlaylistNameComponent implements OnInit, OnDestroy {
     this.subscriptionplaylist =  this.routerActivatedService.params.subscribe((data: Params) => {
       let id = data.id;
       this.subscription = this.playlistService.getPlaylist(id).subscribe((data : Playlist) =>{
-        this.playlist = data;
-        this.list_song = data.list_song;
+         this.playlist = data;
+        // this.list_song = data.list_song;
         console.log(this.list_song);
       });
     });

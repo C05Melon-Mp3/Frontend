@@ -7,24 +7,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PlaylistService {
-  public playlist: Playlist[];
-  public API : string ='http://localhost:3000/playlist';
-
+  public playlistUrl : string ='http://localhost:8080/playlists';
   constructor(private http : HttpClient) {}
  
   getAllPlaylist(): Observable<Playlist[]>{
-    return this.http.get<Playlist[]>(`${this.API}`);
+    return this.http.get<Playlist[]>(`${this.playlistUrl}`);
   }
   getPlaylist(id: number) : Observable<Playlist>{
-    return this.http.get<Playlist>(`${this.API}/${id}`);
+    return this.http.get<Playlist>(`${this.playlistUrl}/${id}`);
   }
   addPlaylist(playlist:Playlist): Observable<Playlist>{
-    return this.http.post<Playlist>(`${this.API}`,playlist);
+    return this.http.post<Playlist>(`${this.playlistUrl}`,playlist);
   }
   editPlaylist(playlist:Playlist):Observable<Playlist>{
-    return this.http.put<Playlist>(`${this.API}/${playlist.id}`,playlist)
+    return this.http.put<Playlist>(`${this.playlistUrl}/update-playlist/${playlist.id}`,playlist)
   }
   deletePlaylist(id: number): Observable<Playlist>{
-    return this.http.delete<Playlist>(`${this.API}/${id}`);
+    return this.http.delete<Playlist>(`${this.playlistUrl}/${id}`);
   }
 }

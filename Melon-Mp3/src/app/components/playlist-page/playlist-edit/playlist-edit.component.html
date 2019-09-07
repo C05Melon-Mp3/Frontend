@@ -1,26 +1,27 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Edit PlayList</h3>
-    </div>
-    <div class="list">
-        <div class="panel-body">
-            <form>
-                <div class="form-group">
-                    <label for="name_playlist">Name Playlist</label>
-                    <input type="text" class="form-control" [(ngModel)]="playlist.name_playlist" name="name_playlist">
-                </div>
-                <div class="form-group">
-                    <label for="avatar">Avatar</label>
-                    <input type="text" class="form-control" [(ngModel)]="playlist.avatar" name="avatar">
-                </div>
-                <div class="form-group">
-                    <label for="list_song">List_Song</label>
-                    <input type="text" class="form-control" [(ngModel)]="playlist.list_song" name="list_song">
-                </div>
+<div class="container text-center">
+    <h3>Update PlayList</h3>
+    <div class="updateplaylist">
+        <form>
 
-                <button type="submit" class="btn btn-primary" (click)="onUpdatePlaylist()">Save</button>
-            </form>
+            <br>
+            <mat-form-field class="full-width">
+                <input matInput type="text" placeholder="Name Playlist" [(ngModel)]="playlist.name" name="name">
 
-        </div>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+
+                <textarea matInput name="avatar" placeholder="Avatar Playlist" [(ngModel)]="playlist.avatar" cols="10" rows="5"></textarea>
+            </mat-form-field>
+            <br>
+
+            <button class="mt-4 update" mat-raised-button color="primary" type="submit" (click)="onUpdatePlaylist()">
+                                        <i class="fas fa-sign-in-alt"></i> Update
+                                    </button>
+            <button class="mt-4 cancel" mat-raised-button color="primary" type="submit" [routerLink]="['/melon.mp3.vn/playlist']">
+                                        <i class="fas fa-sign-in-alt"></i>Cancel
+                                    </button>
+        </form>
     </div>
+
 </div>

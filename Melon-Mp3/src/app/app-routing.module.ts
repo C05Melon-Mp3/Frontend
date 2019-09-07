@@ -19,6 +19,7 @@ import { ArtistCommentComponent } from './components/artist-page/artist-comment/
 import { LoginComponent } from './components/login-melon/login/login.component';
 import { RegisterComponent } from './components/login-melon/register/register.component';
 import { UpdatePasswordComponent } from './components/login-melon/update-password/update-password.component';
+import { ArtistEditComponent } from './components/artist-page/artist-edit/artist-edit.component';
 
 
 const routes: Routes = [
@@ -63,7 +64,7 @@ const routes: Routes = [
         component: PlaylistEditComponent,
       },
       {
-        path : ':id/:name_playlist',
+        path : ':id/:name',
         component : PlaylistNameComponent,
         children :[
           {
@@ -110,14 +111,14 @@ const routes: Routes = [
         },
         {
           path: ':id/edit',
-          component: ArtistAddComponent
+          component: ArtistEditComponent
         },
         {
-          path: ':id/:name_artist',
+          path: ':id/:name',
           component: ArtistNameComponent
         },
         {
-          path: ':id/:name_artist/comment',
+          path: ':id/:name/comment',
           component: ArtistCommentComponent
         }
     ]

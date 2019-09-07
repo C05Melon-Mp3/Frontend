@@ -1,11 +1,11 @@
 <div class="content">
     <div class="playlist">
-        <h3>Playlist {{ playlist.name_playlist}}</h3>
+        <h3>Playlist {{ playlist.name}}</h3>
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a [routerLink]="['/melon.mp3.vn/playlist',playlist.id,'edit-playlist']">Edit playlist {{ playlist.name_playlist }}</a></li>
+                <li><a [routerLink]="['/melon.mp3.vn/playlist',playlist.id,'edit-playlist']">Edit playlist {{ playlist.name }}</a></li>
                 <li><a [routerLink]="['/melon.mp3.vn/song']">Add songs to the list</a></li>
             </ul>
         </div>
