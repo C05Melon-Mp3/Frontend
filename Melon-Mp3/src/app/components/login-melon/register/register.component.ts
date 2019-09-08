@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { Account } from 'src/app/models/account.class';
 import { AccountService } from 'src/app/services/account.service';
+import { AuthUserService } from 'src/app/services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -58,18 +60,23 @@ export class RegisterComponent implements OnInit {
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number' }
     ],
   };
-
+  sub:Subscription
   form: any = {};
   userInfo: Account;
   isRegister = false;
   isRegisterFailed = false;
   errorMessage = '';
 
-  constructor(private accountService: AccountService, private fb: FormBuilder, private router: Router, public snackbar: MatSnackBar) { }
+  constructor(private accountService: AccountService, 
+    private fb: FormBuilder, private router: Router,
+    private authUserService:AuthUserService,
+     public snackbar: MatSnackBar) { }
 
   ngOnInit() {
     this.createFormRegister();
+   
   }
+  
 
   registerForm: FormGroup
 
