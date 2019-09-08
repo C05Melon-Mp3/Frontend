@@ -20,9 +20,13 @@ import { LoginComponent } from './components/login-melon/login/login.component';
 import { RegisterComponent } from './components/login-melon/register/register.component';
 import { UpdatePasswordComponent } from './components/login-melon/update-password/update-password.component';
 import { ArtistEditComponent } from './components/artist-page/artist-edit/artist-edit.component';
+import { UpdateUserInformationComponent } from './components/login-melon/update-user-information/update-user-information.component';
+import { ProfileComponent } from './components/login-melon/profile/profile.component';
+import { ListAccountComponent } from './components/login-melon/list-account/list-account.component';
 
 
 const routes: Routes = [
+  
   //Home-page
   {
     path: '',
@@ -46,6 +50,14 @@ const routes: Routes = [
     path: 'melon.mp3.vn/accounts/update-password/:id',
     component: UpdatePasswordComponent,
   },
+  { path: 'melon.mp3.vn/accounts/update-user-information/:id', 
+  component: UpdateUserInformationComponent },
+  {
+    path: "melon.mp3.vn/accounts/Profile/:info",
+    component: ProfileComponent
+  },
+  { path: "melon.mp3.vn/accounts/list-account", component: ListAccountComponent },
+  
   //Playlist-page
   {
     path: 'melon.mp3.vn/playlist',
