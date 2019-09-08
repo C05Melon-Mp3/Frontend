@@ -13,7 +13,7 @@ const httpOptions = {
 export class AccountService {
 
   constructor(private http: HttpClient) { }
-  
+
   registerUrl = "http://localhost:8080/register";
   private baseUrl = 'http://localhost:8080/accounts';
 
@@ -26,15 +26,15 @@ export class AccountService {
     return this.http.put(`${this.baseUrl}/update-password/${id}`, { newPassword: newPassword, currentPassword: currentPassword });
   }
 
-    getAccountById(id :number){
+  getAccountById(id: number) {
     return this.http.get<Account>(this.baseUrl + '/show/' + id);
   }
 
-  getAllAccounts():Observable<any>{
+  getAllAccounts(): Observable<any> {
     return this.http.get(this.baseUrl);
   }
 
-  updateUserInformation(account:Account){
-    return this.http.put(this.baseUrl+'/update-user/'+account.id,account);
+  updateUserInformation(account: Account) {
+    return this.http.put(this.baseUrl + '/update-user/' + account.id, account);
   }
 }

@@ -19,6 +19,7 @@ import { ArtistCommentComponent } from './components/artist-page/artist-comment/
 import { LoginComponent } from './components/login-melon/login/login.component';
 import { RegisterComponent } from './components/login-melon/register/register.component';
 import { UpdatePasswordComponent } from './components/login-melon/update-password/update-password.component';
+import { UpdateUserComponent } from './components/login-melon/update-user/update-user.component';
 
 
 const routes: Routes = [
@@ -42,9 +43,13 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-  path: 'melon.mp3.vn/accounts/update-password/:id',
-  component: UpdatePasswordComponent,
-},
+    path: 'melon.mp3.vn/accounts/update-password/:id',
+    component: UpdatePasswordComponent,
+  },
+  {
+    path: 'melon.mp3.vn/accounts/update-user/:id',
+    component: UpdateUserComponent,
+  },
   //Playlist-page
   {
     path: 'melon.mp3.vn/playlist',
@@ -55,7 +60,7 @@ const routes: Routes = [
         component: PlaylistComponent,
       },
       {
-        path: 'add-playlist', 
+        path: 'add-playlist',
         component: PlaylistAddComponent,
       },
       {
@@ -63,16 +68,16 @@ const routes: Routes = [
         component: PlaylistEditComponent,
       },
       {
-        path : ':id/:name_playlist',
-        component : PlaylistNameComponent,
-        children :[
+        path: ':id/:name_playlist',
+        component: PlaylistNameComponent,
+        children: [
           {
             path: 'add-playlist-song',
             component: PlaylistAddSongComponent,
           }
         ]
       }
-      
+
     ]
   },
   //Song-page
@@ -99,27 +104,27 @@ const routes: Routes = [
     path: 'melon.mp3.vn/artist',
     component: ArtistPageComponent,
     children: [
-      
-        {
-          path: 'add-artist',
-          component: ArtistAddComponent
-        },
-        {
-          path: '',
+
+      {
+        path: 'add-artist',
+        component: ArtistAddComponent
+      },
+      {
+        path: '',
         component: ArtistComponent
-        },
-        {
-          path: ':id/edit',
-          component: ArtistAddComponent
-        },
-        {
-          path: ':id/:name_artist',
-          component: ArtistNameComponent
-        },
-        {
-          path: ':id/:name_artist/comment',
-          component: ArtistCommentComponent
-        }
+      },
+      {
+        path: ':id/edit',
+        component: ArtistAddComponent
+      },
+      {
+        path: ':id/:name_artist',
+        component: ArtistNameComponent
+      },
+      {
+        path: ':id/:name_artist/comment',
+        component: ArtistCommentComponent
+      }
     ]
   }
 ];

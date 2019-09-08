@@ -1,11 +1,8 @@
-
-
 <div class="wrapper">
     <mat-card>
         <p style="font-size: 30px; color:rgb(26, 78, 175); text-align:center; margin-top: 10px; ">Registration</p>
         <mat-card-content>
             <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegisters()">
-
                 <!-- fullName -->
                 <mat-form-field class="full-width">
                     <input matInput placeholder="Full Name" [(ngModel)]="form.fullName" formControlName="fullName"
@@ -16,7 +13,6 @@
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
-
                 <!-- userName -->
                 <mat-form-field class="full-width">
                     <input matInput placeholder="User Name" [(ngModel)]="form.username" formControlName="username"
@@ -105,10 +101,9 @@
                 </mat-form-field>
                 <!-- Button -->
                 <mat-card-actions>
-                    <button mat-raised-button style="border-radius: 20px" color="primary" >Register</button>
+                    <button mat-raised-button style="border-radius: 20px" color="primary">Register</button>
                 </mat-card-actions>
             </form>
-          
         </mat-card-content>
     </mat-card>
 </div>
