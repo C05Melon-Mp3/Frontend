@@ -57,6 +57,8 @@ import { UpdatePasswordComponent } from './components/login-melon/update-passwor
 import { AnotherComponent } from './components/another/another.component';
 import { httpInterceptorProviders } from './models/auth-interceptor';
 import { TokenStorageService } from './auth/token-storage.service';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,8 @@ import { TokenStorageService } from './auth/token-storage.service';
     PlaylistAddSongComponent,
     UpdatePasswordComponent,
     AnotherComponent,
+    HeaderComponent,
+    FooterComponent,
     
   ],
   imports: [

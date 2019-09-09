@@ -1,21 +1,29 @@
+<app-header></app-header>
+<div class="container">
+  
 
-<button type="button" class="btn btn-success" (click)="logout()">Log out</button>
+    <div class="content">
+        <div class="artists">
+            <h3> List Artists </h3>
+            <button type="button" class="btn btn-primary btn-artists"
+                [routerLink]="['/melon.mp3.vn/artist/add-artist']">Create new Artist</button>
+        </div>
+    
+    <button type="button" class="btn btn-success" [routerLink]="['/melon.mp3.vn/song/add-song']">Add song</button>
+    
+        <div class="top" *ngFor="let item of artists">
 
-<div class="content">
-    <div class="artists">
-        <h3> List Artists </h3>
-        <button type="button" class="btn btn-primary btn-artists" [routerLink]="['/melon.mp3.vn/artist/add-artist']">Create new Artist</button>
+            <img src="{{ item.avatar_artist }}" alt="{{ item.name_artist }}">
+            <a [routerLink]="['/melon.mp3.vn/artist',item.id, item.name_artist]">
+                <h6>{{ item.name_artist }}</h6>
+            </a>
+            <button type="button" class="btn btn-primary btn-comment"
+                [routerLink]="['/melon.mp3.vn/artist', item.id, item.name_artist, 'comment']">Comment</button>
+        </div>
+        <div class="top-add">
+            <a class="a-add" [routerLink]="['/melon.mp3.vn/artist/add-artist']">+</a>
+        </div>
     </div>
-    <div class="top" *ngFor="let item of artists">
-
-        <img src="{{ item.avatar_artist }}" alt="{{ item.name_artist }}">
-        <a [routerLink]="['/melon.mp3.vn/artist',item.id, item.name_artist]">
-            <h6>{{ item.name_artist }}</h6>
-        </a>
-        <button type="button" class="btn btn-primary btn-comment" [routerLink]="['/melon.mp3.vn/artist', item.id, item.name_artist, 'comment']">Comment</button>
-    </div>
-    <div class="top-add">
-        <a class="a-add" [routerLink]="['/melon.mp3.vn/artist/add-artist']">+</a>
-    </div>
+    <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
+<app-footer></app-footer>

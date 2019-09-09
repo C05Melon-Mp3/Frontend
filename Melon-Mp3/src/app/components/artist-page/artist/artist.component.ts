@@ -38,14 +38,10 @@ export class ArtistComponent implements OnInit ,OnDestroy {
       this.artists = data;
     })
   }
-  logout(){
-   console.log("Nice to meet you")
-    this.storageService.signOut();
-    this.storageService.signOut1();
-    this.userService.getUser().subscribe( data => {
-      console.log(data);
-    })
-  }
+
+  
+
+  
   ngOnDestroy() {
 
     if (this.subscription) {
