@@ -1,35 +1,42 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Add Song</h3>
-    </div>
-    <div class="panel-body">
-        <form action="" method="POST" role="form">
-            <div class="form-group">
-                <label for="name">Song Title:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.song_name" name="name">
-            </div>
-            <div class="form-group">
-                <label for="artist">Artist:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.name_artist" name="artist">
-            </div>
-            <div class="form-group">
-                <label for="desc">Description:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.description" name="desc">
-            </div>
-            <div class="form-group">
-                <label for="label">Label:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.label" name="label">
-            </div>
-            <div class="form-group">
-                <label for="filemp3">File MP3:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.fileMp3" name="filemp3">
-            </div>
-            <div class="form-group">
-                <label for="avatar_song">Avatar:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.avatar_song" name="avatar">
-            </div>
+<div class="wrapper">
+    <mat-card>
+        <p style="font-size: 30px; color:rgb(26, 78, 175); text-align:center; margin-top: 10px; ">Add New Song</p>
+        <mat-card-content>
+            <form [formGroup]="addForm" (ngSubmit)="onSubmitAddSong()">
 
-            <button type="submit" class="btn btn-primary" (click)="onAddSong()">Save</button>
-        </form>
-    </div>
+                <!-- name Song -->
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Name Song" [(ngModel)]="form.nameSong" formControlName="nameSong">
+                </mat-form-field>
+
+                <!-- description Song -->
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Description Song" [(ngModel)]="form.descriptionSong" formControlName="descriptionSong">
+                
+                </mat-form-field>
+
+                <!-- File Mp3 -->
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="File Mp3" [(ngModel)]="form.fileMp3" formControlName="fileMp3">
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Avatar Song" [(ngModel)]="form.avatarSong" formControlName="avatarSong">
+                </mat-form-field>
+
+
+                <!-- comment -->
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Comment" [(ngModel)]="form.comment" formControlName="comment">
+                    <mat-hint align="end">Awesome song with catchy melody</mat-hint>
+                </mat-form-field>
+
+                
+                <!-- Button -->
+                <mat-card-actions>
+                    <button mat-raised-button style="border-radius: 20px" color="primary">Create</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>

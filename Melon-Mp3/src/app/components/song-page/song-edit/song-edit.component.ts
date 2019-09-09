@@ -12,6 +12,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class SongEditComponent implements OnInit,OnDestroy {
 
   public song : Song;
+  form: any = {};
   public subscription : Subscription;
   public subscriptionParams : Subscription;
 
@@ -24,7 +25,13 @@ export class SongEditComponent implements OnInit,OnDestroy {
     }
 
   ngOnInit() {
-    this.song = new Song();
+    this.song = new Song(
+      this.form.nameSong,
+      this.form.descriptionSong,
+      this.form.fileMp3,
+      this.form.avatarSong,
+      this.form.comment
+    );
     this.loadData();
   }
 
@@ -40,7 +47,7 @@ export class SongEditComponent implements OnInit,OnDestroy {
   loadData(){
     this.subscriptionParams =  this.activatedRouteService.params.subscribe((data: Params) => {
       let id = data.id;
-      this.subscription = this.songService.getSong(id).subscribe((data : Song) =>{
+      this.subscription = this.songService.getSongById(id).subscribe((data : Song) =>{
         this.song = data;
       });
     });
@@ -48,7 +55,7 @@ export class SongEditComponent implements OnInit,OnDestroy {
 
   onEditSong(){
       this.subscription = this.songService.editSong(this.song).subscribe((data : Song) => {
-            this.routerService.navigateByUrl('/melon.mp3.vn/song');
+            this.routerService.navigate(['/melon.mp3.vn/song']);
     });
   }  
 

@@ -8,29 +8,29 @@
                     <input matInput placeholder="Full Name" [(ngModel)]="form.fullName" formControlName="fullName"
                         required>
                     <mat-error *ngFor="let validation of validation_messages.fullName">
-                        <mat-error class="error-message"
-                            *ngIf="registerForm.get('fullName').hasError(validation.type) && (registerForm.get('fullName').dirty || registerForm.get('fullName').touched)">
+                        <mat-error class="error-message" *ngIf="registerForm.get('fullName').hasError(validation.type) && 
+                        (registerForm.get('fullName').dirty || registerForm.get('fullName').touched)">
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
-                <!-- userName -->
+                <!-- userName -->   
                 <mat-form-field class="full-width">
                     <input matInput placeholder="User Name" [(ngModel)]="form.username" formControlName="username"
                         required>
                     <mat-icon matSuffix>person</mat-icon>
                     <mat-error *ngFor="let validation of validation_messages.userName">
-                        <mat-error class="error-message"
-                            *ngIf="registerForm.get('username').hasError(validation.type) && (registerForm.get('username').dirty || registerForm.get('username').touched)">
+                        <mat-error class="error-message" *ngIf="registerForm.get('username').hasError(validation.type) && 
+                        (registerForm.get('username').dirty || registerForm.get('username').touched)">
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
-
+                   
                 <!-- Age -->
                 <mat-form-field class="full-width">
                     <input matInput placeholder="Age" [(ngModel)]="form.age" formControlName="age" required>
                     <mat-error *ngFor="let validation of validation_messages.age">
-                        <mat-error class="error-message"
-                            *ngIf="registerForm.get('age').hasError(validation.type) && (registerForm.get('age').dirty || registerForm.get('age').touched)">
+                        <mat-error class="error-message" *ngIf="registerForm.get('age').hasError(validation.type) && 
+                        (registerForm.get('age').dirty || registerForm.get('age').touched)">
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -44,8 +44,8 @@
                         </mat-option>
                     </mat-select>
                     <mat-error *ngFor="let validation of validation_messages.gender">
-                        <mat-error class="error-message"
-                            *ngIf="registerForm.get('gender').hasError(validation.type) && (registerForm.get('gender').dirty || registerForm.get('gender').touched)">
+                        <mat-error class="error-message" *ngIf="registerForm.get('gender').hasError(validation.type) && 
+                        (registerForm.get('gender').dirty || registerForm.get('gender').touched)">
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -57,8 +57,8 @@
                     <mat-hint align="end">Việt Nam(+84): 098989898</mat-hint>
                     <mat-icon matSuffix>phone</mat-icon>
                     <mat-error *ngFor="let validation of validation_messages.phone">
-                        <mat-error class="error-message"
-                            *ngIf="registerForm.get('phone').hasError(validation.type) && (registerForm.get('phone').dirty || registerForm.get('phone').touched)">
+                        <mat-error class="error-message" *ngIf="registerForm.get('phone').hasError(validation.type) && 
+                        (registerForm.get('phone').dirty || registerForm.get('phone').touched)">
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -67,8 +67,8 @@
                 <mat-form-field class="full-width">
                     <input matInput placeholder="Address" [(ngModel)]="form.address" formControlName="address" required>
                     <mat-error *ngFor="let validation of validation_messages.address">
-                        <mat-error class="error-message"
-                            *ngIf="registerForm.get('address').hasError(validation.type) && (registerForm.get('address').dirty || registerForm.get('address').touched)">
+                        <mat-error class="error-message" *ngIf="registerForm.get('address').hasError(validation.type) && 
+                        (registerForm.get('address').dirty || registerForm.get('address').touched)">
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -79,23 +79,24 @@
                     <mat-hint align="end">Example: dev123@gmail.com</mat-hint>
                     <mat-icon matSuffix>email</mat-icon>
                     <mat-error *ngFor="let validation of validation_messages.email">
-                        <mat-error class="error-message"
-                            *ngIf="registerForm.get('email').hasError(validation.type) && (registerForm.get('email').dirty || registerForm.get('email').touched)">
+                        <mat-error class="error-message" *ngIf="registerForm.get('email').hasError(validation.type) && 
+                        (registerForm.get('email').dirty || registerForm.get('email').touched)">
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
 
                 <!-- Password -->
                 <mat-form-field class="full-width">
-                    <input matInput placeholder="Password" [(ngModel)]="form.password"
-                        [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <input matInput placeholder="Password" [(ngModel)]="form.password" [type]="hide ? 'password' : 'text'"
+                        formControlName="password" required>
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                         [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                     <mat-error *ngFor="let validation of validation_messages.password">
-                        <mat-error class="error-message"
-                            *ngIf="registerForm.get('password').hasError(validation.type) && (registerForm.get('password').dirty || registerForm.get('password').touched)">
+
+                        <mat-error class="error-message" *ngIf="registerForm.get('password').hasError(validation.type) && 
+                        (registerForm.get('password').dirty || registerForm.get('password').touched)">
                             {{validation.message}}</mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -104,6 +105,10 @@
                     <button mat-raised-button style="border-radius: 20px" color="primary">Register</button>
                 </mat-card-actions>
             </form>
+            <mat-card-actions>
+                <a routerLink="/melon.mp3.vn/login"><button mat-button color="primary">You have an account?</button></a>
+            </mat-card-actions>
+
         </mat-card-content>
     </mat-card>
 </div>

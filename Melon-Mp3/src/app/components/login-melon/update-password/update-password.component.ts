@@ -1,4 +1,3 @@
-
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
 import { AccountService } from 'src/app/services/account.service';
@@ -18,6 +17,7 @@ export class UpdatePasswordComponent implements OnInit {
   currentPassword: String;
   message: String;
   id: number = 1;
+
   loginStatus: Boolean = false;
   constructor(private formBuilder: FormBuilder, private accountService: AccountService,
     private loginStatusService: LoginStatusService, private token: TokenStorageService) { }
@@ -46,20 +46,21 @@ export class UpdatePasswordComponent implements OnInit {
         newPassword: ['', [Validators.minLength(6), Validators.required]],
         confirmPassword: ['', Validators.required]
       }, {
-        validator: this.comparePassword,
+          validator: this.comparePassword,
 
-      })
+        })
     });
   }
   public hasError = (controlName: string, errorName: string) => {
     console.log("aasd")
     return this.registerForm.controls[controlName].hasError(errorName);
   }
-
   onSubmit() {
     if (confirm("Bạn có muốn cập nhật password này hay không?")) {
-      console.log(this.childMessage + "abc");
+      console.log(this.childMessage + "abcdef");
+      console.log("--------------1--------------");
       console.log(this.registerForm.get("currentPassword").value);
+      console.log("--------------2--------------");
       console.log(this.registerForm.get("password").get("newPassword").value);
       if (this.registerForm.valid) {
         this.currentPassword = this.registerForm.get("currentPassword").value;
@@ -79,9 +80,20 @@ export class UpdatePasswordComponent implements OnInit {
             })
         }
       } else {
-        alert("Please enter full information");
+        this.accountService.updatePassword(this.id, this.newPassword, this.currentPassword)
+          .subscribe(res => {
+            if (res.text == "Successful") {
+              alert("Success");
+            } else if (res.text == "NotCompare") {
+              alert("Wrong Password");
+            } else {
+              alert("Wrong Account");
+            }
+          })
       }
+    } else {
+      alert("Please enter full information");
     }
   }
-
 }
+

@@ -1,0 +1,31 @@
+<div class="container text-center">
+    <h3>Update Artist</h3>
+    <div class="updateartist">
+        <form>
+
+            <br>
+            <mat-form-field class="full-width">
+                <input matInput type="text" placeholder="Name Artist" [(ngModel)]="artist.name" name="name">
+
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+
+                <textarea matInput name="avatar" placeholder="Avatar Artist" [(ngModel)]="artist.avatar" cols="10" rows="5"></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+                <input matInput type="text" placeholder="Country" [(ngModel)]="artist.country" name="country">
+
+            </mat-form-field>
+            <br>
+            <button class="mt-4 artist" mat-raised-button color="primary" type="submit" (click)="onUpdateArtist()">
+                                            <i class="fas fa-sign-in-alt"></i> Update
+                                        </button>
+            <button class="mt-4 cancel" mat-raised-button color="primary" type="submit" [routerLink]="['/melon.mp3.vn/artist']">
+                                            <i class="fas fa-sign-in-alt"></i>Cancel
+                                        </button>
+        </form>
+    </div>
+
+</div>
