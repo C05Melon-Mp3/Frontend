@@ -29,11 +29,9 @@ export class AccountService {
   updatePassword(id: number, newPassword: String, currentPassword: String): Observable<any> {
     return this.http.put(`${this.baseUrl}/update-password/${id}`, { newPassword: newPassword, currentPassword: currentPassword });
   }
-
   // updatePassword(id: number, newPassword: String, currentPassword: String): Observable<any> {
   //   return this.http.put(`${this.baseUrl}/update-password/${id}`, { newPassword: newPassword, currentPassword: currentPassword });
   // }
-
   getAccountById(id: number) {
     return this.http.get<Account>(this.baseUrl + '/show/' + id);
   }

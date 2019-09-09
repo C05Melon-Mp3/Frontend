@@ -13,45 +13,40 @@ import { MatChipInputEvent } from '@angular/material';
   styleUrls: ['./update-user-information.component.scss']
 })
 export class UpdateUserInformationComponent implements OnInit {
-  submitted = false;
-  // editForm: FormGroup;
+   // submitted = false;
 
+  // visible = true;
+  // selectable = true;
+  // removable = true;
+  // addOnBlur = true;
 
-  visible = true;
-  selectable = true;
-  removable = true;
-  addOnBlur = true;
-
-  @ViewChild('chipList', { static: true }) chipList;
-  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  // @ViewChild('chipList', { static: true }) chipList;
+  // readonly separatorKeysCodes: number[] = [];
   editAccountForm: FormGroup;
-
 
   constructor(private router: Router,
     public fb: FormBuilder,
     private accountService: AccountService,
     private actRoute: ActivatedRoute,
-    private location: Location,
-  ) {
+    private location: Location, ) {
     var accountId = localStorage.getItem("id");
 
-    const id = +accountId;
+    const id = 1;
     this.accountService.getAccountById(id).subscribe(data => {
       this.editAccountForm.patchValue(data)
     })
   }
 
   ngOnInit() {
-    console.log("ID::::::::::::::::"+localStorage.getItem("id"));
+    console.log("ID::::::::::::::::" + localStorage.getItem("id"));
     this.updateAccountForm();
   }
-
   /* Update form */
   updateAccountForm() {
     this.editAccountForm = this.fb.group({
-      id:[],
+      id: [],
       fullName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$')]],
-      age: [, [Validators.required, Validators.min(18), Validators.max(70)]],
+      age: [, [Validators.required, Validators.min(18)]],
       gender: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern('[0]\\d{9}')]],
@@ -69,18 +64,36 @@ export class UpdateUserInformationComponent implements OnInit {
   goBack() {
     this.location.back();
   }
-
-  /* Submit book */
+  /* Submit edit account */
   updateAccount() {
     if (this.editAccountForm.valid && window.confirm('Are you sure you wanna update?')) {
-           this.accountService.updateUserInformation(this.editAccountForm.value)
-             .subscribe(data => {
-               console.log(this.editAccountForm.value);
-              console.log(data.toString());
-              this.router.navigate(['melon.mp3.vn/accounts/list-account']);
-              alert("Update User Information successfully!")
-            });
-         }
+      this.accountService.updateUserInformation(this.editAccountForm.value).subscribe(data => {
+        this.router.navigate(['melon.mp3.vn/login']);
+        alert("Update User Information successfully!")
+      });
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // if (window.confirm('Are you sure you wanna update?')) {
     //   let account = this.accountService.getAccountById(id).subscribe(data => {
     //     this.editAccountForm.setValue(data);
@@ -88,7 +101,7 @@ export class UpdateUserInformationComponent implements OnInit {
     //   this.accountService.updateUserInformation(this.editAccountForm.value);
     //   this.router.navigate(['list-account']);
     // }
-  }
+
   // ngOnInit() {
   //   var accountId = localStorage.getItem("id");
 
@@ -123,4 +136,4 @@ export class UpdateUserInformationComponent implements OnInit {
   //       });
   //   }
   // }
-}
+

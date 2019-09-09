@@ -19,14 +19,17 @@ import { ArtistCommentComponent } from './components/artist-page/artist-comment/
 import { LoginComponent } from './components/login-melon/login/login.component';
 import { RegisterComponent } from './components/login-melon/register/register.component';
 import { UpdatePasswordComponent } from './components/login-melon/update-password/update-password.component';
+
+
 import { ArtistEditComponent } from './components/artist-page/artist-edit/artist-edit.component';
 import { UpdateUserInformationComponent } from './components/login-melon/update-user-information/update-user-information.component';
 import { ProfileComponent } from './components/login-melon/profile/profile.component';
 import { ListAccountComponent } from './components/login-melon/list-account/list-account.component';
 
 
+
 const routes: Routes = [
-  
+
   //Home-page
   {
     path: '',
@@ -50,14 +53,15 @@ const routes: Routes = [
     path: 'melon.mp3.vn/accounts/update-password/:id',
     component: UpdatePasswordComponent,
   },
-  { path: 'melon.mp3.vn/accounts/update-user-information/:id', 
-  component: UpdateUserInformationComponent },
+  {
+    path: 'melon.mp3.vn/accounts/update-user-information/:id',
+    component: UpdateUserInformationComponent
+  },
   {
     path: "melon.mp3.vn/accounts/Profile/:info",
     component: ProfileComponent
   },
   { path: "melon.mp3.vn/accounts/list-account", component: ListAccountComponent },
-  
   //Playlist-page
   {
     path: 'melon.mp3.vn/playlist',
@@ -68,7 +72,7 @@ const routes: Routes = [
         component: PlaylistComponent,
       },
       {
-        path: 'add-playlist', 
+        path: 'add-playlist',
         component: PlaylistAddComponent,
       },
       {
@@ -76,16 +80,9 @@ const routes: Routes = [
         component: PlaylistEditComponent,
       },
       {
-        path : ':id/:name',
-        component : PlaylistNameComponent,
-        children :[
-          {
-            path: 'add-playlist-song',
-            component: PlaylistAddSongComponent,
-          }
-        ]
+        path: ':id/:name_playlist',
+        component: PlaylistNameComponent,
       }
-      
     ]
   },
   //Song-page
@@ -112,27 +109,39 @@ const routes: Routes = [
     path: 'melon.mp3.vn/artist',
     component: ArtistPageComponent,
     children: [
-      
-        {
-          path: 'add-artist',
-          component: ArtistAddComponent
-        },
-        {
-          path: '',
+
+      {
+        path: 'add-artist',
+        component: ArtistAddComponent
+      },
+      {
+        path: '',
         component: ArtistComponent
-        },
-        {
-          path: ':id/edit',
-          component: ArtistEditComponent
-        },
-        {
-          path: ':id/:name',
-          component: ArtistNameComponent
-        },
-        {
-          path: ':id/:name/comment',
-          component: ArtistCommentComponent
-        }
+      },
+      {
+        path: ':id/edit',
+        component: ArtistAddComponent
+      },
+      {
+        path: ':id/:name_artist',
+        component: ArtistNameComponent
+      },
+      {
+        path: ':id/:name_artist/comment',
+        component: ArtistCommentComponent
+      },
+      {
+        path: ':id/edit',
+        component: ArtistEditComponent
+      },
+      {
+        path: ':id/:name',
+        component: ArtistNameComponent
+      },
+      {
+        path: ':id/:name/comment',
+        component: ArtistCommentComponent
+      }
     ]
   }
 ];

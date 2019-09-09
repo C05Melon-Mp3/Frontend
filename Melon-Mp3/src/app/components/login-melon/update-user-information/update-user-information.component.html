@@ -1,105 +1,88 @@
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
-
-<!-- Title group  -->
-
-
-<!-- Account form -->
-<div class="inner-wrapper">
-    <form [formGroup]="editAccountForm" (ngSubmit)="updateAccount()" novalidate>
-        <div class="w3-container w3-lobster font-effect-brick-sign">
-            <p class="w3-xxlarge" style="padding-right: 20px;padding-right: 20px;
-            padding-left: 30px;
-            font-size: 35px;
-            font-family: Lobster, Sans-serif;
-            height: 45px;">Edit Account</p>
-        </div>
-        <mat-card style="padding-top: 15px">
-            <div class="controlers-wrapper">
-                <!-- Account name -->
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Account name" formControlName="fullName">
-                    <mat-icon matSuffix>person</mat-icon>
-                    <mat-error *ngIf="handleError('fullName', 'required')">
-                        You must provide a<strong>account name</strong>
-                    </mat-error>
-                    <mat-error *ngIf="handleError('fullName', 'pattern')">
-                        Your name should not contain special characters
-                    </mat-error>
-                </mat-form-field>
-
-
-                <!--Account's age -->
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Age" formControlName="age">
-                    <mat-icon matSuffix>cake</mat-icon>
-                    <mat-error *ngIf="handleError('age', 'required')">
-                        Age is required and must from 18 to 70 years old
-                    </mat-error>
-                </mat-form-field>
-
-
-
-                <!-- Phone Number -->
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Phone Number" formControlName="phone">
-                    <mat-icon matSuffix>settings_cell</mat-icon>
-                    <mat-error *ngIf="handleError('phone', 'required')">
-                        You must provide a <strong>Phone Number</strong>
-                    </mat-error>
-                    <mat-error *ngIf="handleError('phone', 'pattern')">
-                        Phone must start by 0 and have 10 number
-                    </mat-error>
-
-                </mat-form-field>
-
+<div class="container">
+    <div class="inner-wrapper">
+        <form [formGroup]="editAccountForm" (ngSubmit)="updateAccount()" novalidate class="updateUserForm">
+            <div class="w3-container w3-lobster font-effect-brick-sign">
+                <p class="w3-xxlarge" style="padding-right: 20px;padding-right: 20px;
+                            padding-left: 30px;
+                            font-size: 35px;
+                            font-family: Lobster, Sans-serif;
+                            height: 45px; text-align: center">Edit User</p>
             </div>
-        </mat-card>
-        
-        <mat-card>
-            <div class="controlers-wrapper">
-                <!--Account's Address-->
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Address" formControlName="address">
-                    <mat-icon matSuffix>room</mat-icon>
-                    <mat-error *ngIf="handleError('address', 'required')">
-                        You must provide a <strong>Address</strong>
-                    </mat-error>
-
-                </mat-form-field>
-
-                <!-- Account's gender -->
-                <div class="misc-bottom-padding">
-                    <mat-label><b>Gender:</b> </mat-label>
-                    <mat-radio-group aria-label="Select an option" formControlName="gender">
-                        <mat-radio-button value="Male">Male</mat-radio-button>
-                        <mat-radio-button value="Female">Female</mat-radio-button>
-                        <mat-radio-button value="Other">Other</mat-radio-button>
-                    </mat-radio-group>
+            <mat-card style="padding-top: 15px">
+                <div class="controlers-wrapper">
+                    <!-- Account name -->
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Account name" formControlName="fullName">
+                        <mat-icon matSuffix>person</mat-icon>
+                        <mat-error *ngIf="handleError('fullName', 'required')">
+                            <strong>Account Name</strong> must not be blank
+                        </mat-error>
+                        <mat-error *ngIf="handleError('fullName', 'pattern')">
+                            Account name should not contain special characters
+                        </mat-error>
+                    </mat-form-field><br>
+                    <!--Account's age -->
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Age" formControlName="age">
+                        <mat-icon matSuffix>cake</mat-icon>
+                        <mat-error *ngIf="handleError('age', 'required')">
+                            <strong>Age </strong> must not be blank
+                        </mat-error>
+                        <mat-error *ngIf="handleError('age', 'min')">
+                            <strong>Age </strong> must be at least 18 years old
+                        </mat-error>
+                    </mat-form-field><br>
+                    <!-- Phone Number -->
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Phone Number" formControlName="phone">
+                        <mat-icon matSuffix>settings_cell</mat-icon>
+                        <mat-error *ngIf="handleError('phone', 'required')">
+                            You must provide a <strong>Phone Number</strong>
+                        </mat-error>
+                        <mat-error *ngIf="handleError('phone', 'pattern')">
+                            Phone must start by 0 and have 10 number
+                        </mat-error>
+                    </mat-form-field><br>
+                    <div class="controlers-wrapper">
+                        <!--Account's Address-->
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Address" formControlName="address">
+                            <mat-icon matSuffix>room</mat-icon>
+                            <mat-error *ngIf="handleError('address', 'required')">
+                                You must provide a <strong>Address</strong>
+                            </mat-error>
+                        </mat-form-field><br>
+                        <!-- Account's gender -->
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Gender</mat-label>
+                            <mat-select placeholder="Gender" name="gender" formControlName="gender">
+                                <mat-option value="Male" name="Male">Male</mat-option>
+                                <mat-option value="Female" name="Female">Female</mat-option>
+                            </mat-select>
+                        </mat-form-field><br>
+                        <!--Account's email-->
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Email" formControlName="email">
+                            <mat-icon matSuffix>sms</mat-icon>
+                            <mat-error *ngIf="handleError('email', 'required')">
+                                <strong> Email</strong> must not be blank</mat-error>
+                            <mat-error *ngIf="handleError('email', 'email')">
+                                <strong> Email</strong> must be a valid email address
+                            </mat-error>
+                        </mat-form-field><br>
+                    </div>
                 </div>
-
-
-                <!--Account's email-->
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email" formControlName="email">
-                    <mat-icon matSuffix>sms</mat-icon>
-                    <mat-error *ngIf="handleError('email', 'required')">
-                        Email is required </mat-error>
-                    <mat-error *ngIf="handleError('email', 'email')">
-                        Email must be a valid email address
-                    </mat-error>
-                </mat-form-field>
-            </div>
-        </mat-card>
-
-        <!-- Submit & Reset -->
-        <mat-card>
-            <div class="full-wrapper button-wrapper">
-                <div class="button-wrapper">
-                    <button mat-flat-button color="warn">Update</button>
-                    <button mat-flat-button color="war" type="button" (click)="goBack()">Go Back</button>
+            </mat-card>
+            <!-- Submit & Reset -->
+            <mat-card>
+                <div class="full-wrapper button-wrapper">
+                    <div class="button-wrapper">
+                        <button mat-flat-button color="accent" class="buttonUpdate">Update</button>
+                        <button mat-flat-button color="basic" class="buttonCancel" type="button"
+                            (click)="goBack()">Cancel</button>
+                    </div>
                 </div>
-            </div>
-        </mat-card>
-    </form>
+            </mat-card>
+        </form>
+    </div>
 </div>
