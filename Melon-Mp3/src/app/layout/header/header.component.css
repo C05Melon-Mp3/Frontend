@@ -1,0 +1,67 @@
+.logo {
+        margin: 10px;
+        float: left;
+        color: #d882b7ee;
+        text-decoration: none;
+    }
+    
+    .dropdown {
+        margin: 0;
+        float: left;
+        background: hsl(0, 0%, 100%);
+        border-radius: 60%;
+    }
+    
+    .dropdown-menu {
+        background: #ffffff;
+    }
+    
+    .navbar-nav {
+        background: #d882b7ee;
+    }
+    
+    .navbar-inverse .navbar-nav>li>a {
+        color: #ffffff;
+    }
+    
+    .navbar-inverse {
+        background: #d882b7ee;
+        border: none;
+        color: white;
+        border-radius: 0;
+    }
+    
+    a {
+        color: #ffffff;
+    }
+    
+    .dropdown-toggle {
+        margin: 0;
+        float: left;
+        width: 50px;
+        height: 50px;
+        background: #ffffff;
+        background-image: url('D:\project_app_music_TVN\app_music_fontend_C0519_TVN\Frontend\Melon-Mp3\src\assets\images\README.png');
+        background-size: 100%;
+        border: none;
+        border-radius: 60%;
+    }
+    
+    .img {
+        margin: 0;
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .search {
+        color: #d882b7ee;
+        border: 1px solid #d882b7ee;
+        font-style: italic;
+    }
+
+
+
+
+    
+    
