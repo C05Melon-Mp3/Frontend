@@ -158,10 +158,4 @@ export class TokenStorageService {
     }
     return this.roles;
   }
-<<<<<<< HEAD
-
-
 }
-=======
-}
->>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f

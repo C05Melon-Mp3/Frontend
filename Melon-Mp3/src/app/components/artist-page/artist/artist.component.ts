@@ -28,16 +28,16 @@ export class ArtistComponent implements OnInit ,OnDestroy {
     public routerActivatedService: ActivatedRoute) { }
 
   ngOnInit() {
-<<<<<<< HEAD
-    this.userService.getUser().subscribe(user => {
-      console.log(user);
-=======
+// <<<<<<< HEAD
+//     this.userService.getUser().subscribe(user => {
+//       console.log(user);
+// =======
     this.subscription = this.songService.getAllSongs().subscribe(data => {
       this.songs = data;
     })
     this.subscriptionArtist = this.artistService.getAllArtist().subscribe(data => {
       this.artists = data;
->>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
+
     })
     // this.subscription = this.songService.getAllSong().subscribe(data => {
     //   this.songs = data;

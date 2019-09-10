@@ -1,53 +1,53 @@
-<<<<<<< HEAD
 <app-header></app-header>
-=======
+
 <div class="content">
     <div class="song">
         <h3>ALL YOUR SONGS</h3>
         <button type="button" class="btn btn-primary btn-song" [routerLink]="['/melon.mp3.vn/song/add-song']">Add
             Song</button>
     </div>
->>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
 
-<div class="container">
-    <div class="content">
-        <div class="song">
-            <h3>ALL YOUR SONGS</h3>
-            
-        </div>
 
-<<<<<<< HEAD
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <hr>
-            <tbody>
-                <tr class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let song of songs; index as i">
-                    <a>
-                        <td>
-                            <img src="{{ song.avatar_song }}" alt="{{ song.name_song }}" width="50px" height="50px">
-                        </td>
-                        <td>{{ i+1 }} .</td>
-                        <td>{{ song.name_song }}</td>
-                        <td>{{ song.name_artist }}</td>
-                        <td>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
+    <div class="container">
+        <div class="content">
+            <div class="song">
+                <h3>ALL YOUR SONGS</h3>
 
-                                    <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Add song
-                                            {{ song.name_song}} to the Playlist</a></li>
-                                    <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Edit</a></li>
-                                    <li><a (click)="onDeleteSong(song.id)">Delete</a></li>
-                                </ul>
-                            </div>
-                        </td>
-                    </a>
-                    <hr>
-                </tr>
-            </tbody>
-        </div>
+            </div>
 
-=======
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <hr>
+                <tbody>
+                    <tr class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let song of songs; index as i">
+                        <a>
+                            <td>
+                                <img src="{{ song.avatar_song }}" alt="{{ song.name_song }}" width="50px" height="50px">
+                            </td>
+                            <td>{{ i+1 }} .</td>
+                            <td>{{ song.name_song }}</td>
+                            <td>{{ song.name_artist }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                        data-toggle="dropdown">
+                                        <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+
+                                        <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Add song
+                                                {{ song.name_song}} to the Playlist</a></li>
+                                        <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Edit</a></li>
+                                        <li><a (click)="onDeleteSong(song.id)">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </a>
+                        <hr>
+                    </tr>
+                </tbody>
+            </div>
+
+
             <tr class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let song of songs; index as i">
                 <a>
 
@@ -79,8 +79,9 @@
             </a>
             <hr>
             </tr>
-        </tbody>
->>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
+
+        </div>
+
     </div>
 </div>
 
