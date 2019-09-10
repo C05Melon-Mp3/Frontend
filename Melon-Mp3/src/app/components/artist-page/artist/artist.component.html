@@ -30,7 +30,6 @@
         <button type="button" class="btn btn-primary btn-artists" [routerLink]="['/melon.mp3.vn/artist/add-artist']">Create new Artist</button>
     </div>
     <div class="top" *ngFor="let artist of artists">
-
         <img src="{{ artist.avatar }}" alt="{{ artist.name }}">
         <a [routerLink]="['/melon.mp3.vn/artist',artist.id, artist.name]">
             <h6>{{ artist.name }}</h6>
