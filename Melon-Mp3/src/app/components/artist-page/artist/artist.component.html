@@ -1,16 +1,15 @@
 <app-header></app-header>
 <div class="container">
-  
-
     <div class="content">
         <div class="artists">
             <h3> List Artists </h3>
             <button type="button" class="btn btn-primary btn-artists"
                 [routerLink]="['/melon.mp3.vn/artist/add-artist']">Create new Artist</button>
+                <button type="button" class="btn btn-success" [routerLink]="['/melon.mp3.vn/song/add-song']">Add song</button>
         </div>
-    
-    <button type="button" class="btn btn-success" [routerLink]="['/melon.mp3.vn/song/add-song']">Add song</button>
-    
+   
+        
+
         <div class="top" *ngFor="let item of artists">
 
             <img src="{{ item.avatar_artist }}" alt="{{ item.name_artist }}">
@@ -24,6 +23,7 @@
             <a class="a-add" [routerLink]="['/melon.mp3.vn/artist/add-artist']">+</a>
         </div>
     </div>
-    <router-outlet></router-outlet>
+
 </div>
+<router-outlet></router-outlet>
 <app-footer></app-footer>

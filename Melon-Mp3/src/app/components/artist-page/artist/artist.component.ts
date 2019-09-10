@@ -31,12 +31,12 @@ export class ArtistComponent implements OnInit ,OnDestroy {
     this.userService.getUser().subscribe(user => {
       console.log(user);
     })
-    this.subscription = this.songService.getAllSong().subscribe(data => {
-      this.songs = data;
-    })
-    this.subscriptionArtist = this.artistService.getAllArtist().subscribe(data => {
-      this.artists = data;
-    })
+    // this.subscription = this.songService.getAllSong().subscribe(data => {
+    //   this.songs = data;
+    // })
+    // this.subscriptionArtist = this.artistService.getAllArtist().subscribe(data => {
+    //   this.artists = data;
+    // })
   }
 
   
@@ -44,12 +44,12 @@ export class ArtistComponent implements OnInit ,OnDestroy {
   
   ngOnDestroy() {
 
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
-    if (this.subscriptionArtist) {
-      this.subscriptionArtist.unsubscribe();
-    }
+    // if (this.subscription) {
+    //   this.subscription.unsubscribe();
+    // }
+    // if (this.subscriptionArtist) {
+    //   this.subscriptionArtist.unsubscribe();
+    // }
 
   }
 
