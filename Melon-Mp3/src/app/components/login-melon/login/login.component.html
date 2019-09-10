@@ -1,19 +1,31 @@
-<div class="container text-center">
-    <form class="loginForm">
+<app-header></app-header>
+<div class="container text-center" >
+    <form class="loginForm" [formGroup]="formLogin" (ngSubmit)="onSubmit()" >
         <h3>Sign In</h3>
         <mat-form-field>
-            <input matInput placeholder="Username">
+            <input matInput placeholder="Username" formControlName="username" >
         </mat-form-field>
         <br>
         <mat-form-field>
-            <input matInput type="password" placeholder="Password">
+            <input matInput type="password" placeholder="Password" formControlName="password">
         </mat-form-field>
         <br>
         <button class="mt-4" mat-raised-button color="primary" type="submit">
                     <i class="fas fa-sign-in-alt"></i> Login
                 </button>
-        <button class="mt-4" mat-raised-button color="primary" type="submit" [routerLink]="['/melon.mp3.vn/register']">
+              
+                <p style="margin-top:30px"> 
+                Bạn chưa có tài khoản ? Vui lòng <a [routerLink]="['/melon.mp3.vn/register']" style="color:red; font-size: 15px">
+                     Đăng Ký   
+                </a> tại đây
+            </p>
+        <!-- <button class="mt-4" mat-raised-button color="primary" type="submit" [routerLink]="['/melon.mp3.vn/register']">
                     <i class="fas fa-sign-in-alt"></i>Register
-                </button>
+                </button> -->
     </form>
 </div>
+
+{{ formLogin.value | json}}
+<app-footer></app-footer>
+
+

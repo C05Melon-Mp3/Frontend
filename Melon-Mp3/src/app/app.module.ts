@@ -54,6 +54,11 @@ import { PlaylistEditComponent } from './components/playlist-page/playlist-edit/
 import { PlaylistNameComponent } from './components/playlist-page/playlist-name/playlist-name.component';
 import { PlaylistAddSongComponent } from './components/playlist-page/playlist-add-song/playlist-add-song.component';
 import { UpdatePasswordComponent } from './components/login-melon/update-password/update-password.component';
+import { AnotherComponent } from './components/another/another.component';
+import { httpInterceptorProviders } from './models/auth-interceptor';
+import { TokenStorageService } from './auth/token-storage.service';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 
 import { ArtistEditComponent } from './components/artist-page/artist-edit/artist-edit.component';
@@ -84,6 +89,11 @@ import { ListAccountComponent } from './components/login-melon/list-account/list
     PlaylistNameComponent,
     PlaylistAddSongComponent,
     UpdatePasswordComponent,
+<<<<<<< HEAD
+    AnotherComponent,
+    HeaderComponent,
+    FooterComponent,
+=======
 
     
 
@@ -92,6 +102,7 @@ import { ListAccountComponent } from './components/login-melon/list-account/list
     ProfileComponent,
     ListAccountComponent,
 
+>>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
     
   ],
   imports: [
@@ -126,7 +137,10 @@ import { ListAccountComponent } from './components/login-melon/list-account/list
     MatNativeDateModule,
     MatRadioModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders,
+    TokenStorageService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,58 @@
+<div class="container">
+        <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <nav class="navbar navbar-brand">
+                                <a class="logo" [routerLink]="['/melon.mp3.vn']">
+                                        <img src="../assets/images/van.png" width="30px" height="30px" alt="">MELON MP3
+                                </a>
+                                <form class="navbar-form navbar-left" role="search">
+                                        <div class="form-group">
+                                                <input type="text" class="form-control search"
+                                                        placeholder="Search artists , songs, playlist ..." size="100">
+                                        </div>
+                                </form>
+                                <div class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                                
+                                                <li *ngIf="!authority" class="menu__item"><a class="nav-link"
+                                                                [routerLink]="['/melon.mp3.vn/login']"
+                                                                class="menu__link" data-action="close-mobile-menu"
+                                                                rel="nofollow">Login</a></li>
+
+                                                <li *ngIf="!authority" class="menu__item"><a class="nav-link"
+                                                                [routerLink]="['/melon.mp3.vn/register']"
+                                                                class="menu__link" data-action="close-mobile-menu"
+                                                                rel="nofollow">Register</a></li>
+
+                                                <li *ngIf="authority" class="menu__item"><a class="nav-link"
+                                                                
+                                                                (click)="logout()" class="menu__link"
+                                                                data-action="close-mobile-menu" rel="nofollow">Đăng
+                                                                xuất</a></li>
+
+                                        </ul>
+                                </div>
+                        </nav>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <nav class="navbar navbar-inverse">
+                                <ul class="nav navbar-nav">
+                                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                                <a [routerLink]="['/melon.mp3.vn']">HOME</a>
+                                        </li>
+                                        <li routerLinkActive="active">
+                                                <a [routerLink]="['/melon.mp3.vn/artist']"> ARTIST</a>
+                                        </li>
+                                        <li routerLinkActive="active">
+                                                <a [routerLink]="['/melon.mp3.vn/song']">SONG</a>
+                                        </li>
+                                        <li routerLinkActive="active">
+                                                <a [routerLink]="['/melon.mp3.vn/playlist']">PLAYLIST</a>
+                                        </li>
+                                </ul>
+                        </nav>
+                </div>
+        </div>
+</div>
