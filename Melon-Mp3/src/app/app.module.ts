@@ -59,7 +59,9 @@ import { httpInterceptorProviders } from './models/auth-interceptor';
 import { TokenStorageService } from './auth/token-storage.service';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 import { ArtistEditComponent } from './components/artist-page/artist-edit/artist-edit.component';
 import { UpdateUserInformationComponent } from './components/login-melon/update-user-information/update-user-information.component';
