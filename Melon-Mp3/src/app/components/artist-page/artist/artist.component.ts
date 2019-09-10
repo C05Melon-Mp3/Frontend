@@ -5,9 +5,6 @@ import { Subscription } from 'rxjs';
 import { ArtistService } from 'src/app/services/artist.service';
 import { SongService } from 'src/app/services/song.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { TokenStorageService } from 'src/app/auth/token-storage.service';
-import { AccountService } from 'src/app/services/account.service';
-import { AuthUserService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-artist',
@@ -23,41 +20,24 @@ export class ArtistComponent implements OnInit ,OnDestroy {
   constructor(public artistService: ArtistService,
     public songService : SongService,
     public routerService: Router,
-    private userService:AuthUserService,
-    private storageService:TokenStorageService,
     public routerActivatedService: ActivatedRoute) { }
 
   ngOnInit() {
-<<<<<<< HEAD
-    this.userService.getUser().subscribe(user => {
-      console.log(user);
-=======
     this.subscription = this.songService.getAllSongs().subscribe(data => {
       this.songs = data;
     })
     this.subscriptionArtist = this.artistService.getAllArtist().subscribe(data => {
       this.artists = data;
->>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
     })
-    // this.subscription = this.songService.getAllSong().subscribe(data => {
-    //   this.songs = data;
-    // })
-    // this.subscriptionArtist = this.artistService.getAllArtist().subscribe(data => {
-    //   this.artists = data;
-    // })
   }
-
-  
-
-  
   ngOnDestroy() {
 
-    // if (this.subscription) {
-    //   this.subscription.unsubscribe();
-    // }
-    // if (this.subscriptionArtist) {
-    //   this.subscriptionArtist.unsubscribe();
-    // }
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+    if (this.subscriptionArtist) {
+      this.subscriptionArtist.unsubscribe();
+    }
 
   }
 
