@@ -30,9 +30,9 @@ export class ArtistAddComponent implements OnInit ,OnDestroy{
   onAddArtist() {
 
     this.subscription = this.artistService.addArtist(this.artist).subscribe(data => {
-      if (data.id && data) {
+
         this.routerService.navigate(['/melon.mp3.vn/artist']);
-      }
+
     });
 
   }

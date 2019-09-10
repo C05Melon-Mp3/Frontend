@@ -7,25 +7,23 @@ import { Artist } from '../models/artist.class';
   providedIn: 'root'
 })
 export class ArtistService {
-  public artists: Artist[];
-  public API : string ='http://localhost:3000/artists';
+  public artistUrl : string ='http://localhost:8080/artists';
 
   constructor(private http : HttpClient) {}
  
   getAllArtist(): Observable<Artist[]>{
-    return this.http.get<Artist[]>(`${this.API}`);
+    return this.http.get<Artist[]>(`${this.artistUrl}`);
   }
   getArtist(id: number) : Observable<Artist>{
-    return this.http.get<Artist>(`${this.API}/${id}`);
+    return this.http.get<Artist>(`${this.artistUrl}/${id}`);
   }
   addArtist(artist:Artist): Observable<Artist>{
-    return this.http.post<Artist>(`${this.API}`,artist);
+    return this.http.post<Artist>(`${this.artistUrl}`,artist);
   }
   editArtist(artist:Artist):Observable<Artist>{
-    return this.http.put<Artist>(`${this.API}/${artist.id}`,artist)
+    return this.http.put<Artist>(`${this.artistUrl}/update-artist/${artist.id}`,artist)
   }
   deleteArtist(id: number): Observable<Artist>{
-    return this.http.delete<Artist>(`${this.API}/${id}`);
+    return this.http.delete<Artist>(`${this.artistUrl}/delete-artist/${id}`);
   }
 }
-

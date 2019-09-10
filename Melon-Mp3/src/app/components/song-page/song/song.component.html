@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 <app-header></app-header>
+=======
+<div class="content">
+    <div class="song">
+        <h3>ALL YOUR SONGS</h3>
+        <button type="button" class="btn btn-primary btn-song" [routerLink]="['/melon.mp3.vn/song/add-song']">Add
+            Song</button>
+    </div>
+>>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
 
 <div class="container">
     <div class="content">
@@ -7,6 +16,7 @@
             
         </div>
 
+<<<<<<< HEAD
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <hr>
             <tbody>
@@ -37,6 +47,40 @@
             </tbody>
         </div>
 
+=======
+            <tr class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let song of songs; index as i">
+                <a>
+
+            <tr>
+                <td>{{ i+1 }} .</td>
+                <td>{{ song.nameSong }}</td>
+                <td>{{ song.descriptionSong }}</td>
+                <td>{{ song.avatarSong }}</td>
+                <td>{{ song.comment }}</td>
+
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+
+                            <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Add song {{ song.nameSong}} to
+                                    the
+                                    Playlist</a></li>
+                            <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Edit</a></li>
+                            <li><a (click)="onDeleteSong(song.id)">Delete</a></li>
+                        </ul>
+                    </div>
+
+
+
+                </td>
+            </tr>
+            </a>
+            <hr>
+            </tr>
+        </tbody>
+>>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
     </div>
 </div>
 

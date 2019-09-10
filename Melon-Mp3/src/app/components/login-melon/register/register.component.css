@@ -5,13 +5,13 @@
     padding: 40px;
     background: rgba(252, 250, 250, 0.911);
     border-radius: 10px;
- 
 }
 
 .mat-form-field {
     width: 60%;
     margin-left: 20%
 }
-.mat-card-actions{
+
+.mat-card-actions {
     margin-left: 43%
 }

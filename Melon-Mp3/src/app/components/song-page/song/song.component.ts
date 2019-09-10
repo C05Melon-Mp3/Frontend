@@ -22,17 +22,18 @@ export class SongComponent implements OnInit ,OnDestroy{
   ) { }
 
   ngOnInit() {
-    this.subscription = this.songService.getAllSong().subscribe(data => {
+    this.subscription = this.songService.getAllSongs().subscribe(data => {
       this.songs = data;
     })
   }
   onDeleteSong(id : number){
+    if(window.confirm('Are you sure to delete this?')) {
     this.subscription = this.songService.deleteSong(id).subscribe((data : Song) =>
       {
         this.updateDataAfterDelete(id);
         this.routerService.navigate(['/melon.mp3.vn/song']);
       });
-
+    }
   }
   updateDataAfterDelete(id : number){
     for (var i = 0; i < this.songs.length; i++) {

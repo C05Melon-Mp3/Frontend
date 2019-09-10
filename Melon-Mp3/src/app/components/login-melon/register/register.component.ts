@@ -37,15 +37,13 @@ export class RegisterComponent implements OnInit {
     ],
     'age': [
       { type: 'required', message: 'Age is required' },
-      { type: 'min', message: 'Renting a house over 18 years old' },
-      { type: 'max', message: 'Under 70 years old for renting house' }
     ],
     'gender': [
       { type: 'required', message: 'Please select your gender' },
     ],
     'phone': [
       { type: 'required', message: 'Phone Number is required' },
-      { type: 'pattern', message: 'Phone Number is only number' }
+      { type: 'pattern', message: 'Phone Number contains only number' }
     ],
     'address': [
       { type: 'required', message: 'Address is required' },
@@ -146,7 +144,7 @@ export class RegisterComponent implements OnInit {
           horizontalPosition: 'center',
         });
         snackbarRef.onAction().subscribe(() => {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/melon.mp3.vn/login']);
         })
         console.log(data);
       },

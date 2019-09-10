@@ -30,9 +30,9 @@ export class PlaylistAddComponent implements OnInit, OnDestroy {
   onAddPlaylist() {
 
     this.subscription = this.playlistService.addPlaylist(this.playlist).subscribe(data => {
-      if (data.id && data) {
+      
         this.routerService.navigate(['/melon.mp3.vn/playlist']);
-      }
+    
     });
 
   }

@@ -60,6 +60,13 @@ import { TokenStorageService } from './auth/token-storage.service';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
+
+import { ArtistEditComponent } from './components/artist-page/artist-edit/artist-edit.component';
+import { UpdateUserInformationComponent } from './components/login-melon/update-user-information/update-user-information.component';
+import { ProfileComponent } from './components/login-melon/profile/profile.component';
+import { ListAccountComponent } from './components/login-melon/list-account/list-account.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,9 +89,20 @@ import { FooterComponent } from './layout/footer/footer.component';
     PlaylistNameComponent,
     PlaylistAddSongComponent,
     UpdatePasswordComponent,
+<<<<<<< HEAD
     AnotherComponent,
     HeaderComponent,
     FooterComponent,
+=======
+
+    
+
+    ArtistEditComponent,
+    UpdateUserInformationComponent,
+    ProfileComponent,
+    ListAccountComponent,
+
+>>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
     
   ],
   imports: [
