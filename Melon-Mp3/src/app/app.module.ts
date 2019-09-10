@@ -89,11 +89,11 @@ import { ListAccountComponent } from './components/login-melon/list-account/list
     PlaylistNameComponent,
     PlaylistAddSongComponent,
     UpdatePasswordComponent,
-<<<<<<< HEAD
+
     AnotherComponent,
     HeaderComponent,
     FooterComponent,
-=======
+
 
     
 
@@ -102,7 +102,7 @@ import { ListAccountComponent } from './components/login-melon/list-account/list
     ProfileComponent,
     ListAccountComponent,
 
->>>>>>> fc2acf4afb9819bb0aa3e59f24b6074c4311f52f
+
     
   ],
   imports: [
