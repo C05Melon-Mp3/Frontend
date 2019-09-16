@@ -12,63 +12,31 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
   styleUrls: ['./song-add.component.css']
 })
 export class SongAddComponent implements OnInit {
+  public song: Song;
+  public subscription: Subscription;
 
-  hide = true;
-
-
-  form: any = {};
-  song: Song;
-  isAdd = false;
-
-  constructor(private songService: SongService, private fb: FormBuilder, private router: Router, public snackbar: MatSnackBar) { }
+  constructor(
+    public songService: SongService,
+    public routerService: Router
+  ) { }
 
   ngOnInit() {
-    this.createFormAdd();
+    this.song = new Song();
+  }
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+  onAddSong() {
+
+    this.subscription = this.songService.addSong(this.song).subscribe(data => {
+
+        this.routerService.navigate(['/melon.mp3.vn/song']);
+
+    });
+
   }
 
-  addForm: FormGroup
-
-  createFormAdd() {
-    this.addForm = this.fb.group({
-      nameSong: new FormControl('',),
-      descriptionSong: new FormControl('',),
-      fileMp3: new FormControl('',),
-      avatarSong: new FormControl('',),
-      comment: new FormControl('',)
-
-    })
-  };
-
-  onSubmitAddSong() {
-    console.log(this.addForm);
-
-    this.song = new Song(
-      this.form.nameSong,
-      this.form.descriptionSong,
-      this.form.fileMp3,
-      this.form.avatarSong,
-      this.form.comment
-    );
-
-    this.songService.addSong(this.song)
-      .subscribe(data => {
-        if (this.song == null) {
-          this.isAdd = false;
-        }
-        this.isAdd = true;
-        const songList = "Back to Song List";
-        const snackbarRef = this.snackbar.open('Add New Song Successfully!', songList, {
-          horizontalPosition: 'center',
-        });
-        snackbarRef.onAction().subscribe(() => {
-          this.router.navigate(['/melon.mp3.vn/song']);
-        })
-        console.log(data);
-        
-      }
-     
-      )
-    
-  }
 
 }

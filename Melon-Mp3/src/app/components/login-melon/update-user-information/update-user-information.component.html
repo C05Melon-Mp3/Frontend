@@ -1,12 +1,13 @@
+<app-header></app-header>
 <div class="container">
     <div class="inner-wrapper">
         <form [formGroup]="editAccountForm" (ngSubmit)="updateAccount()" novalidate class="updateUserForm">
             <div class="w3-container w3-lobster font-effect-brick-sign">
                 <p class="w3-xxlarge" style="padding-right: 20px;padding-right: 20px;
-                            padding-left: 30px;
-                            font-size: 35px;
-                            font-family: Lobster, Sans-serif;
-                            height: 45px; text-align: center">Edit User</p>
+                                padding-left: 30px;
+                                font-size: 35px;
+                                font-family: Lobster, Sans-serif;
+                                height: 45px; text-align: center">Edit User</p>
             </div>
             <mat-card style="padding-top: 15px">
                 <div class="controlers-wrapper">
@@ -77,7 +78,7 @@
             <mat-card>
                 <div class="full-wrapper button-wrapper">
                     <div class="button-wrapper">
-                        <button mat-flat-button color="accent" class="buttonUpdate">Update</button>
+                        <button mat-flat-button color="accent" class="buttonUpdate" type="button" (click)="updateAccount()">Update</button>
                         <button mat-flat-button color="basic" class="buttonCancel" type="button"
                             (click)="goBack()">Cancel</button>
                     </div>
@@ -86,3 +87,5 @@
         </form>
     </div>
 </div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

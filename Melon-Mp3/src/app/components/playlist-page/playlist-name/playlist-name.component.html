@@ -1,6 +1,7 @@
+<app-header></app-header>
 <div class="content">
     <div class="playlist">
-        <h3>Playlist {{ playlist.name}}</h3>
+        <h3>Playlist {{ playlist.name }}</h3>
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="caret"></span></button>
@@ -12,9 +13,9 @@
     </div>
 
     <div class="top" *ngFor="let song of list_song">
-        <img src="{{ song.avatar_song }}" alt="{{ song.name_song }}" width="80%" height="200px">
+        <img src="{{ song.avatarSong }}" alt="{{ song.nameSong }}" width="80%" height="200px">
         <a [routerLink]="['/melon.mp3.vn/playlist', playlist.id, playlist.name_playlist]">
-            <h4>{{ song.name_song }}</h4>
+            <h4>{{ song.nameSong }}</h4>
             <p>{{ song.name_artist }}</p>
         </a>
     </div>
@@ -22,4 +23,6 @@
         <a class="a-add" [routerLink]="['/melon.mp3.vn/song']">+</a>
     </div>
 </div>
+
 <router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -29,7 +29,7 @@ import {
   MatSelectModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatRadioModule  
+  MatRadioModule
 } from '@angular/material';
 
 
@@ -75,11 +75,13 @@ import { ListAccountComponent } from './components/login-melon/list-account/list
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+
     ArtistComponent,
     ArtistAddComponent,
     ArtistNameComponent,
     ArtistCommentComponent,
     ArtistPageComponent,
+
     SongComponent,
     SongPageComponent,
     SongAddComponent,
@@ -97,15 +99,11 @@ import { ListAccountComponent } from './components/login-melon/list-account/list
     FooterComponent,
 
 
-    
-
     ArtistEditComponent,
     UpdateUserInformationComponent,
     ProfileComponent,
     ListAccountComponent,
 
-
-    
   ],
   imports: [
     BrowserModule,

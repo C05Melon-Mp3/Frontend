@@ -61,7 +61,7 @@ const routes: Routes = [
     component: UpdateUserInformationComponent
   },
   {
-    path: "melon.mp3.vn/accounts/Profile/:info",
+    path: "melon.mp3.vn/accounts/Profile/:id",
     component: ProfileComponent
   },
   { path: "melon.mp3.vn/accounts/list-account", component: ListAccountComponent },
@@ -123,20 +123,20 @@ const routes: Routes = [
       },
       {
         path: ':id/edit',
-        component: ArtistAddComponent
+        component: ArtistEditComponent
       },
       {
-        path: ':id/:name_artist',
+        path: ':id/:name',
         component: ArtistNameComponent
       },
       {
-        path: ':id/:name_artist/comment',
+        path: ':id/:name/comment',
         component: ArtistCommentComponent
       },
-      {
-        path: ':id/edit',
-        component: ArtistEditComponent
-      },
+      // {
+      //   path: ':id/edit',
+      //   component: ArtistEditComponent
+      // },
       {
         path: ':id/:name',
         component: ArtistNameComponent

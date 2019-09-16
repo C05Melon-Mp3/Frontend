@@ -1,32 +1,43 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Edit Song</h3>
-    </div>
-    <div class="panel-body">
-        <form action="" method="POST" role="form">
-            <div class="form-group">
-                <label for="name">Song Title:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.nameSong" name="nameSong">
-            </div>
-            <div class="form-group">
-                <label for="artist">Description:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.descriptionSong" name="descriptionSong">
-            </div>
-            <div class="form-group">
-                <label for="desc">File Mp3:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.fileMp3" name="fileMp3">
-            </div>
+<app-header></app-header>
+<div class="container text-center">
+    <h3>Update Song</h3>
+    <div class="updatesong">
+        <form>
+            <br>
+            <mat-form-field class="full-width">
+                <input matInput type="text" placeholder="Name Song" [(ngModel)]="song.nameSong" name="nameSong">
 
-            <div class="form-group">
-                <label for="avatarSong">Avatar Song:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.avatarSong" name="avatarSong">
-            </div>
-            
-            <div class="form-group">
-                <label for="comment">Comment:</label>
-                <input type="text" class="form-control" [(ngModel)]="song.comment" name="comment">
-            </div>
-            <button type="submit" class="btn btn-primary" (click)="onEditSong()">Save</button>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+                <input matInput type="text" placeholder="Description" [(ngModel)]="song.descriptionSong"
+                    name="descriptionSong">
+
+            </mat-form-field>
+            <br>
+
+            <mat-form-field class="full-width">
+                <input matInput type="text" placeholder="File Mp3" [(ngModel)]="song.fileMp3" name="fileMp3">
+
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+
+                <textarea matInput name="avatarSong" placeholder="Avatar Song" [(ngModel)]="song.avatarSong" cols="10"
+                    rows="5"></textarea>
+            </mat-form-field>
+
+            <br>
+            <button class="mt-4 update" mat-raised-button color="primary" type="submit" (click)="onUpdateSong()">
+                <i class="fas fa-sign-in-alt"></i> Update
+            </button>
+            <button class="mt-4 cancel" mat-raised-button color="primary" type="submit"
+                [routerLink]="['/melon.mp3.vn/song']">
+                <i class="fas fa-sign-in-alt"></i>Cancel
+            </button>
         </form>
     </div>
+
 </div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

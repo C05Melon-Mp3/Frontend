@@ -2,7 +2,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 import { User } from '../models/user.class';
 import * as jwt_decode from 'jwt-decode';
 import { JwtResponse } from '../models/jwt-response.class';
@@ -10,6 +10,8 @@ import { AuthLoginInfo } from '../models/login-info.class';
 import { SignUpInfo } from '../models/signup-info.class';
 import { SignUpFb } from '../models/sign-up-fb.class';
 import { TokenStorageService } from '../auth/token-storage.service';
+import { Account } from '../models/account.class';
+import { Observable } from 'rxjs';
 
 
 const httpOptions = {
@@ -25,7 +27,7 @@ export class AuthUserService {
         private loginUrl = 'http://localhost:8080/api/auth/sign-in';
         private signupUrl = 'http://localhost:8080/api/auth/sign-up';
         private URL =       'http://localhost:8080/userInfo';
-        private userUrl = 'http://localhost:8080/user';
+        private userUrl = 'http://localhost:8080/account';
         private editUrl = 'http://localhost:8080/user/edit-account/change-password'
         constructor(private http: HttpClient, private token: TokenStorageService) {
         }
@@ -61,15 +63,15 @@ export class AuthUserService {
                 return !this.isTokenExpired();
         }
 
-        // getUser(): Observable<User> {
-        //         const decoded = jwt_decode(this.token.getToken());
-        //         const id = decoded.sub;
-        //         return this.http.get<User>(`${this.userUrl}/${id}`, httpOptions);
-        // }
-        getUser(): Observable<User> {
+        getAccount(): Observable<any> {
                 const decoded = jwt_decode(this.token.getToken());
                 const id = decoded.sub;
-                return this.http.get<User>(`${this.URL}`,httpOptions)
+                return this.http.get<any>(`${this.userUrl}/${id}`, httpOptions);
+        }
+        getUser(): Observable<Account> {
+                // const decoded = jwt_decode(this.token.getToken());
+                // const id = decoded.sub;
+                return this.http.get<Account>(`${this.URL}`)
         }
 
         updatePassword(id: number, newPass: string, oldPass: string) {

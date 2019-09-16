@@ -1,42 +1,40 @@
-<div class="wrapper">
-    <mat-card>
-        <p style="font-size: 30px; color:rgb(26, 78, 175); text-align:center; margin-top: 10px; ">Add New Song</p>
-        <mat-card-content>
-            <form [formGroup]="addForm" (ngSubmit)="onSubmitAddSong()">
-
-                <!-- name Song -->
+<app-header></app-header>
+<div class="container text-center">
+        <h3>Add Song</h3>
+        <div class="addsong">
+            <form>
+                <br>
                 <mat-form-field class="full-width">
-                    <input matInput placeholder="Name Song" [(ngModel)]="form.nameSong" formControlName="nameSong">
+                    <input matInput type="text" placeholder="Name Song" [(ngModel)]="song.nameSong" name="nameSong">
+    
                 </mat-form-field>
-
-                <!-- description Song -->
+                <br>
                 <mat-form-field class="full-width">
-                    <input matInput placeholder="Description Song" [(ngModel)]="form.descriptionSong" formControlName="descriptionSong">
-                
+                    <input matInput type="text" placeholder="Description" [(ngModel)]="song.descriptionSong" name="descriptionSong">
+    
                 </mat-form-field>
-
-                <!-- File Mp3 -->
+                <br>
+    
                 <mat-form-field class="full-width">
-                    <input matInput placeholder="File Mp3" [(ngModel)]="form.fileMp3" formControlName="fileMp3">
+                    <input matInput type="text" placeholder="File Mp3" [(ngModel)]="song.fileMp3" name="fileMp3">
+    
                 </mat-form-field>
-
+                <br>
                 <mat-form-field class="full-width">
-                    <input matInput placeholder="Avatar Song" [(ngModel)]="form.avatarSong" formControlName="avatarSong">
+    
+                    <textarea matInput name="avatarSong" placeholder="Avatar Song" [(ngModel)]="song.avatarSong" cols="10" rows="5"></textarea>
                 </mat-form-field>
-
-
-                <!-- comment -->
-                <mat-form-field class="full-width">
-                    <input matInput placeholder="Comment" [(ngModel)]="form.comment" formControlName="comment">
-                    <mat-hint align="end">Awesome song with catchy melody</mat-hint>
-                </mat-form-field>
-
-                
-                <!-- Button -->
-                <mat-card-actions>
-                    <button mat-raised-button style="border-radius: 20px" color="primary">Create</button>
-                </mat-card-actions>
+    
+                <br>
+                <button class="mt-4 add" mat-raised-button color="primary" type="submit" (click)="onAddSong()">
+                                                        <i class="fas fa-sign-in-alt"></i> Add
+                                                    </button>
+                <button class="mt-4 cancel" mat-raised-button color="primary" type="submit" [routerLink]="['/melon.mp3.vn/song']">
+                                                        <i class="fas fa-sign-in-alt"></i>Cancel
+                                                    </button>
             </form>
-        </mat-card-content>
-    </mat-card>
-</div>
+        </div>
+    
+    </div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

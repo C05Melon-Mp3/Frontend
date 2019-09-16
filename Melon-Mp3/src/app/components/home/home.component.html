@@ -8,19 +8,19 @@
     </ol>
     <div class="carousel-inner">
         <div class="item ">
-            <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide"
-                src="https://img.lovepik.com//back_pic/05/65/51/465b7070e2592cd.jpg_wh300.jpg!/fh/300">
+            <img data-src="holder.js/900x1368/auto/#777:#7a7a7a/text:First slide" alt="First slide"
+                src="https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80">
 
         </div>
 
         <div class="item">
-            <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide"
-                src="https://img.lovepik.com//back_pic/05/65/51/465b7070e2592cd.jpg_wh300.jpg!/fh/300">
+            <img data-src="holder.js/900x1368/auto/#666:#6a6a6a/text:Second slide" alt="Second slide"
+                src="https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80">
 
         </div>
         <div class="item active">
-            <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide"
-                src="https://img.lovepik.com//back_pic/05/65/51/465b7070e2592cd.jpg_wh300.jpg!/fh/300">
+            <img data-src="holder.js/900x1368/auto/#555:#5a5a5a/text:Third slide" alt="Third slide"
+                src="https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80">
 
         </div>
     </div>
@@ -33,40 +33,41 @@
 <div class="content">
     <h3>Top Bài Hát Xem Nhiều Nhất</h3>
     <div class="top" *ngFor="let song of songs">
-        <img src="{{ song.avatar_song }}" alt="{{ song.name_song }}" width="80%" height="200px">
-        <h4>{{ song.name_song }}</h4>
-        <p>{{ song.name_artist }}</p>
+        <img src="{{ song.avatarSong }}" alt="{{ song.nameSong }}" width="80%" height="200px">
+        <h4>{{ song.nameSong }}</h4>
     </div>
 </div>
 
 <div class="content">
     <h3>Top Playlist Xem Nhiều Nhất</h3>
-    <div class="top" *ngFor="let iterm of playlist; index as i">
-        <h4>{{ i+1 }} . {{ iterm.name }}</h4>
+    <div class="top" *ngFor="let playlist of playlist; index as i">
+        <img src="{{ playlist.avatar }}" alt="{{ playlist.name }}" width="80%" height="200px">
+        <h4>{{ i+1 }} . {{ playlist.name }}</h4>
     </div>
 </div>
 
 <div class="content">
     <h3>Top Bài Hát Like Nhiều</h3>
     <div class="top" *ngFor="let song of songs">
-        <img src="{{ song.avatar_song }}" alt="{{ song.name_song }}" width="80%" height="200px">
-        <h4>{{ song.name_song }}</h4>
+        <img src="{{ song.avatarSong }}" alt="{{ song.nameSong }}" width="80%" height="200px">
+        <h4>{{ song.nameSong }}</h4>
         <p>{{ song.name_artist }}</p>
     </div>
 </div>
 
 <div class="content">
     <h3>Top Playlist Like Nhiều</h3>
-    <div class="top" *ngFor="let iterm of playlist; index as i">
-        <h4>{{ i + 1 }} . {{ iterm.name }}</h4>
+    <div class="top" *ngFor="let playlist of playlist; index as i">
+        <img src="{{ playlist.avatar }}" alt="{{ playlist.name }}" width="80%" height="200px">
+        <h4>{{ i + 1 }} . {{ playlist.name }}</h4>
     </div>
 
 </div>
 <div class="content">
     <h3>Bài Hát Mới</h3>
     <div class="top" *ngFor="let song of songs">
-        <img src="{{ song.avatar_song }}" alt="{{ song.name_song }}" width="80%" height="200px">
-        <h4>{{ song.name_song }}</h4>
+        <img src="{{ song.avatarSong }}" alt="{{ song.nameSong }}" width="80%" height="200px">
+        <h4>{{ song.nameSong }}</h4>
         <p>{{ song.name_artist }}</p>
     </div>
 </div>
@@ -74,8 +75,11 @@
 <div class="content">
     <h3>Playlist Mới</h3>
 
-    <div class="top" *ngFor="let iterm of playlist">
-        <h4>{{ iterm.name }}</h4>
+    <div class="top" *ngFor="let playlist of playlist">
+        <img src="{{ playlist.avatar }}" alt="{{ playlist.name }}" width="80%" height="200px">
+        <h4>{{ playlist.name }}</h4>
     </div>
 
 </div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

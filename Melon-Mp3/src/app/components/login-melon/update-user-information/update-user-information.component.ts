@@ -2,10 +2,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms";
 import { AccountService } from 'src/app/services/account.service';
-
+import * as jwt_decode from 'jwt-decode';
 import { Location } from '@angular/common';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
+import { TokenStorageService } from 'src/app/auth/token-storage.service';
+import { AuthUserService } from 'src/app/services/auth.service';
+import { Account } from 'src/app/models/account.class';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-update-user-information',
@@ -13,47 +17,48 @@ import { MatChipInputEvent } from '@angular/material';
   styleUrls: ['./update-user-information.component.scss']
 })
 export class UpdateUserInformationComponent implements OnInit {
-   // submitted = false;
-
-  // visible = true;
-  // selectable = true;
-  // removable = true;
-  // addOnBlur = true;
-
-  // @ViewChild('chipList', { static: true }) chipList;
-  // readonly separatorKeysCodes: number[] = [];
+   
+  account:Account = new Account();
   editAccountForm: FormGroup;
+  sub:Subscription
 
   constructor(private router: Router,
     public fb: FormBuilder,
     private accountService: AccountService,
     private actRoute: ActivatedRoute,
-    private location: Location, ) {
-    var accountId = localStorage.getItem("id");
-
-    const id = 1;
-    this.accountService.getAccountById(id).subscribe(data => {
-      this.editAccountForm.patchValue(data)
-    })
+    private location: Location, 
+    private userService:AuthUserService) {
+    
   }
 
   ngOnInit() {
     console.log("ID::::::::::::::::" + localStorage.getItem("id"));
+    this.getUser();
+
     this.updateAccountForm();
+  }
+  getUser(){
+   
+  
   }
   /* Update form */
   updateAccountForm() {
-    this.editAccountForm = this.fb.group({
-      id: [],
-      fullName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$')]],
-      age: [, [Validators.required, Validators.min(18)]],
-      gender: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern('[0]\\d{9}')]],
-      address: ['', [Validators.required]],
-      username: [''],
-      password: [''],
+    this.sub =this.userService.getAccount().subscribe( account => {
+      console.log(account);
+      this.account = account;
+      this.editAccountForm = this.fb.group({
+        id: [this.account.id],
+        fullName: [this.account.fullName, [Validators.required, Validators.pattern('^[a-zA-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$')]],
+        age: [this.account.age, [Validators.required, Validators.min(18)]],
+        gender: [this.account.gender, Validators.required],
+        email: [this.account.email, [Validators.required, Validators.email]],
+        phone: [this.account.phone, [Validators.required, Validators.pattern('[0]\\d{9}')]],
+        address: [this.account.address, [Validators.required]],
+        username: [this.account.username],
+        password: [this.account.password],
+      })
     })
+   
   }
 
   /* Get errors */
@@ -68,72 +73,9 @@ export class UpdateUserInformationComponent implements OnInit {
   updateAccount() {
     if (this.editAccountForm.valid && window.confirm('Are you sure you wanna update?')) {
       this.accountService.updateUserInformation(this.editAccountForm.value).subscribe(data => {
-        this.router.navigate(['melon.mp3.vn/login']);
+        this.router.navigate(['melon.mp3.vn']);
         alert("Update User Information successfully!")
       });
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // if (window.confirm('Are you sure you wanna update?')) {
-    //   let account = this.accountService.getAccountById(id).subscribe(data => {
-    //     this.editAccountForm.setValue(data);
-    //   });
-    //   this.accountService.updateUserInformation(this.editAccountForm.value);
-    //   this.router.navigate(['list-account']);
-    // }
-
-  // ngOnInit() {
-  //   var accountId = localStorage.getItem("id");
-
-  //   this.editForm = this.formBuilder.group({
-  //     id: [],
-  //     fullName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$')]],
-  //     age: [, [Validators.required, Validators.min(18), Validators.max(70)]],
-  //     gender: ['', Validators.required],
-  //     phone: ['', [Validators.required, Validators.pattern('[0]\\d{9}')]],
-  //     email: ['', [Validators.required, Validators.email]],
-  //     address: ['', Validators.required],
-  //   });
-
-  //   const id = +accountId;
-  //   this.accountService.getAccountById(id).subscribe(data => {
-  //     this.editForm.patchValue(data);
-  //   });
-  // }
-
-  // get f() { return this.editForm.controls }
-
-
-  // onSubmit() {
-  //   this.submitted = true;
-  //   console.log(this.editForm.value);
-  //   if (this.editForm.valid) {
-  //     this.accountService.updateUserInformation(this.editForm.value)
-  //       .subscribe(data => {
-  //         console.log(data);
-  //         this.router.navigate(['']);
-  //         alert("Update User Information successfully!")
-  //       });
-  //   }
-  // }
-

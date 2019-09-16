@@ -15,7 +15,7 @@
                                         <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                                         </button>
                                         <ul class="dropdown-menu">
-                                                
+
                                                 <li *ngIf="!authority" class="menu__item"><a class="nav-link"
                                                                 [routerLink]="['/melon.mp3.vn/login']"
                                                                 class="menu__link" data-action="close-mobile-menu"
@@ -27,7 +27,26 @@
                                                                 rel="nofollow">Register</a></li>
 
                                                 <li *ngIf="authority" class="menu__item"><a class="nav-link"
-                                                                
+                                                                [routerLink]="['/melon.mp3.vn/accounts/Profile/:id']"
+                                                                class="menu__link" data-action="close-mobile-menu"
+                                                                rel="nofollow">Account Profile</a></li>
+
+                                                <li *ngIf="authority" class="menu__item"><a class="nav-link"
+                                                                [routerLink]="['/melon.mp3.vn/accounts/update-user-information/:id']"
+                                                                class="menu__link" data-action="close-mobile-menu"
+                                                                rel="nofollow">Update Account Information</a></li>
+
+                                                <li *ngIf="authority" class="menu__item"><a class="nav-link"
+                                                                [routerLink]="['/melon.mp3.vn/accounts/update-password/:id']"
+                                                                class="menu__link" data-action="close-mobile-menu"
+                                                                rel="nofollow">Update Password</a></li>
+                                                                <li *ngIf="authority" class="menu__item"><a class="nav-link"
+                                                                        [routerLink]="['/melon.mp3.vn/accounts/list-account']"
+                                                                        class="menu__link" data-action="close-mobile-menu"
+                                                                        rel="nofollow">List Account(Admin Only- Test)</a></li>
+
+
+                                                <li *ngIf="authority" class="menu__item"><a class="nav-link"
                                                                 (click)="logout()" class="menu__link"
                                                                 data-action="close-mobile-menu" rel="nofollow">Đăng
                                                                 xuất</a></li>
