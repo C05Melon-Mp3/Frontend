@@ -7,7 +7,7 @@ import { Artist } from '../models/artist.class';
   providedIn: 'root'
 })
 export class ArtistService {
-  public artistUrl : string ='http://localhost:8080/artists';
+  public artistUrl : string ='http://localhost:9999/artists';
 
   constructor(private http : HttpClient) {}
  

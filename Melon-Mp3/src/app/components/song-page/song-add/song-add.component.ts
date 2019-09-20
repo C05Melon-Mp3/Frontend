@@ -49,18 +49,19 @@ export class SongAddComponent implements OnInit {
       comment: ["", Validators.compose([Validators.required])]
     })
   }
-  onAddSong() {
+  // onAddSong() {
 
-    this.subscription = this.songService.addSong(this.song).subscribe(data => {
+  //   this.subscription = this.songService.addSong(this.song).subscribe(data => {
 
-      this.routerService.navigate(['/melon.mp3.vn/song']);
+  //     this.routerService.navigate(['/melon.mp3.vn/song']);
 
-    });
+  //   });
 
-  }
+  // }
   onSubmitAddSong(formSong) {
     console.log(this.selectUrls.length)
-    console.log('onSubmit')
+    console.log('onSubmit -------------------------')
+
     if (this.formSong.valid) {
       for (var y = 0; y < this.selectUrls.length; y++) {
         var filePath = `${this.formSong.value.descriptionSong}/${this.selectUrls[y].name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
@@ -75,7 +76,7 @@ export class SongAddComponent implements OnInit {
               // this.imageService.insertImageDetails();
               this.song.fileMp3 = url;
               console.log(this.song.fileMp3)
-              console.log("update successfull")
+              console.log("Update successfull")
               // this.resetForm();
               this.song = new Song(
                 this.formSong.value.nameSong,
@@ -86,7 +87,8 @@ export class SongAddComponent implements OnInit {
               );
               console.log("Before : ", this.song);  
               this.sub = this.songService.addSong(this.song).subscribe( song => {
-                console.log(song)
+                console.log(song);
+                this.routerService.navigate(['/melon.mp3.vn/song']);
               })
             })
           })

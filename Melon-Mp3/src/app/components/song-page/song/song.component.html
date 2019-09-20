@@ -70,7 +70,7 @@
                 <tr *ngFor="let song of songs; index as i">
                         <td>{{ i+1 }} .</td>
                     <td>
-                        <img src="{{ song.avatar_song }}" alt="{{ song.nameSong }}" width="50px" height="50px">
+                        <img src="{{ song.avatarSong }}" alt="{{ song.nameSong }}" width="50px" height="50px">
                     </td>
                     
                     <td>{{ song.nameSong }}</td>
@@ -78,6 +78,20 @@
                     <th><audio controls style="outline: none"> 
                         <source [src]="song.fileMp3" type="audio/mp3">
                     </audio></th>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+    
+                                <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Add song {{ song.nameSong}} to
+                                        the
+                                        Playlist</a></li>
+                                <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Edit</a></li>
+                                <li><a (click)="onDeleteSong(song.id)">Delete</a></li>
+                            </ul>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>

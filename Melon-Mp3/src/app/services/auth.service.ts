@@ -24,11 +24,11 @@ const httpOptions = {
 export class AuthUserService {
 
 
-        private loginUrl = 'http://localhost:8080/api/auth/sign-in';
-        private signupUrl = 'http://localhost:8080/api/auth/sign-up';
-        private URL =       'http://localhost:8080/userInfo';
-        private userUrl = 'http://localhost:8080/account';
-        private editUrl = 'http://localhost:8080/user/edit-account/change-password'
+        private loginUrl = 'http://localhost:9999/api/auth/sign-in';
+        private signupUrl = 'http://localhost:9999/api/auth/sign-up';
+        private URL =       'http://localhost:9999/userInfo';
+        private userUrl = 'http://localhost:9999/account';
+        private editUrl = 'http://localhost:9999/user/edit-account/change-password'
         constructor(private http: HttpClient, private token: TokenStorageService) {
         }
 

@@ -16,8 +16,8 @@ export class SongService {
 
   constructor(private http : HttpClient) {}
  
-  addUrl = "http://localhost:8080/songs/add";
-  private baseUrl = 'http://localhost:8080/songs';
+  addUrl = "http://localhost:9999/songs/add";
+  private baseUrl = 'http://localhost:9999/songs';
 
   //create new song
   addSong(song: Song): Observable<any> {

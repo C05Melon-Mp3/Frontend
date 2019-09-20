@@ -16,9 +16,9 @@
             </mat-form-field>
             <br>
 
+            <!-- File Mp3 -->
             <mat-form-field class="full-width">
-                <input matInput type="text" placeholder="File Mp3" [(ngModel)]="song.fileMp3" name="fileMp3">
-
+                <input type="file" placeholder="File Mp3" (change)="getLink($event)" formControlName="fileMp3" >
             </mat-form-field>
             <br>
             <mat-form-field class="full-width">

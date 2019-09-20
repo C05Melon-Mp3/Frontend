@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PlaylistService {
-  public playlistUrl : string ='http://localhost:8080/playlists';
+  public playlistUrl : string ='http://localhost:9999/playlists';
   constructor(private http : HttpClient) {}
  
   getAllPlaylist(): Observable<Playlist[]>{

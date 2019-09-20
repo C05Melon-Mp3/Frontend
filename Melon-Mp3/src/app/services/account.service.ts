@@ -15,8 +15,8 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  registerUrl = "http://localhost:8080/register";
-  private baseUrl = 'http://localhost:8080/accounts';
+  registerUrl = "http://localhost:9999/register";
+  private baseUrl = 'http://localhost:9999/accounts';
 
 
   registerUser(userInfo: Account): Observable<any> {
