@@ -1,43 +1,90 @@
 <app-header></app-header>
-<div class="content">
-        <div class="song">
-            <h3>ALL YOUR SONGS</h3>
-            <button type="button" class="btn btn-primary btn-song" [routerLink]="['/melon.mp3.vn/song/add-song']">Add
-                Song</button>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<!-- <div class="content">
+    <div class="song">
+        <h3>ALL YOUR SONGS</h3>
+        <button type="button" class="btn btn-primary btn-song" [routerLink]="['/melon.mp3.vn/song/add-song']">Add
+            Song</button>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <hr>
+        <tbody>
+            <tr class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let song of songs; index as i">
+                <a>
+            <tr>
+                <td>
+                    <img src="{{ song.avatarSong }}" alt="{{ song.nameSong }}" width="50px" height="50px">
+                </td>
+                <td>{{ i+1 }} .</td>
+                <td>{{ song.nameSong }}</td>
+                <td>{{ song.descriptionSong }}</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+
+                            <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Add song {{ song.nameSong}} to
+                                    the
+                                    Playlist</a></li>
+                            <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Edit</a></li>
+                            <li><a (click)="onDeleteSong(song.id)">Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            </a>
             <hr>
-            <tbody>
-                <tr class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let song of songs; index as i">
-                    <a>
+            </tr>
+        </tbody>
+    </div>
+
+</div> -->
+<div class="container">
+    
+    <div class="row">
+            <div class="song">
+                    <h3>ALL YOUR SONGS</h3>
+                    <button type="button" class="btn btn-primary btn-song" [routerLink]="['/melon.mp3.vn/song/add-song']">Add
+                        Song</button>
+                </div>
+    </div>
+    
+    
+
+
+    <br>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
                 <tr>
+                    
+                    <th>STT</th>
+                    <th>Avatar Song</th>
+                    <th>Name of song</th>
+                    <th>Author(Composer)</th>
+                    <th>Link</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let song of songs; index as i">
+                        <td>{{ i+1 }} .</td>
                     <td>
-                        <img src="{{ song.avatarSong }}" alt="{{ song.nameSong }}" width="50px" height="50px">
+                        <img src="{{ song.avatar_song }}" alt="{{ song.nameSong }}" width="50px" height="50px">
                     </td>
-                    <td>{{ i+1 }} .</td>
+                    
                     <td>{{ song.nameSong }}</td>
                     <td>{{ song.descriptionSong }}</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-    
-                                <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Add song {{ song.nameSong}} to
-                                        the
-                                        Playlist</a></li>
-                                <li><a [routerLink]="['/melon.mp3.vn/song', song.id ,'edit']">Edit</a></li>
-                                <li><a (click)="onDeleteSong(song.id)">Delete</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                </a>
-                <hr>
+                    <th><audio controls style="outline: none"> 
+                        <source [src]="song.fileMp3" type="audio/mp3">
+                    </audio></th>
                 </tr>
             </tbody>
-        </div>
-    
+        </table>
     </div>
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
+
+
+
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

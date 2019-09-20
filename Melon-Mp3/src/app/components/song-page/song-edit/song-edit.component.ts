@@ -24,7 +24,7 @@ export class SongEditComponent implements OnInit,OnDestroy {
     }
 
   ngOnInit() {
-    this.song = new Song();
+    // this.song = new Song();
     this.loadData();
   }
 
