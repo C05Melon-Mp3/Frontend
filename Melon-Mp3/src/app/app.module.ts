@@ -5,6 +5,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+// import the libs you need
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { environment } from '../environments/environment';
 
 
 import {
@@ -61,7 +66,6 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
 
 import { ArtistEditComponent } from './components/artist-page/artist-edit/artist-edit.component';
 import { UpdateUserInformationComponent } from './components/login-melon/update-user-information/update-user-information.component';
@@ -112,6 +116,9 @@ import { ListAccountComponent } from './components/login-melon/list-account/list
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
 
     MaterialModule,
     MatProgressBarModule,
